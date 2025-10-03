@@ -1,0 +1,731 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0e0e0e;
+  font-family: "MinSans-5", sans-serif;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  background: transparent;
+}
+
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+@font-face {
+  font-family: "MinSans-1";
+  src: url("../../fonts/min_sans/1-black-BASIC.woff2") format("woff2"), url("../../fonts/min_sans/1-black-BASIC.otf") format("opentype"), url("../../fonts/min_sans/1-black-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinSans-3";
+  src: url("../../fonts/min_sans/3-bold-BASIC.woff2") format("woff2"), url("../../fonts/min_sans/3-bold-BASIC.otf") format("opentype"), url("../../fonts/min_sans/3-bold-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinSans-5";
+  src: url("../../fonts/min_sans/5-medium-BASIC.woff2") format("woff2"), url("../../fonts/min_sans/5-medium-BASIC.otf") format("opentype"), url("../../fonts/min_sans/5-medium-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinSans-6";
+  src: url("../../fonts/min_sans/6-regular-BASIC.woff2") format("woff2"), url("../../fonts/min_sans/6-regular-BASIC.otf") format("opentype"), url("../../fonts/min_sans/6-regular-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinSans-7";
+  src: url("../../fonts/min_sans/7-light-BASIC.woff2") format("woff2"), url("../../fonts/min_sans/7-light-BASIC.otf") format("opentype"), url("../../fonts/min_sans/7-light-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinSans-9";
+  src: url("../../fonts/min_sans/9-thin-BASIC.woff2") format("woff2"), url("../../fonts/min_sans/9-thin-BASIC.otf") format("opentype"), url("../../fonts/min_sans/9-thin-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-3";
+  src: url("../../fonts/ibm_plex_sans/3-bold-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-3-ITALIC";
+  src: url("../../fonts/ibm_plex_sans/3-bold-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-3-SEMICONDENSED";
+  src: url("../../fonts/ibm_plex_sans/3-bold-SEMICONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-3-SEMICONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/3-bold-SEMICONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-3-CONDENSED";
+  src: url("../../fonts/ibm_plex_sans/3-bold-CONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-3-CONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/3-bold-CONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-4";
+  src: url("../../fonts/ibm_plex_sans/4-semibold-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-4-ITALIC";
+  src: url("../../fonts/ibm_plex_sans/4-semibold-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-4-SEMICONDENSED";
+  src: url("../../fonts/ibm_plex_sans/4-semibold-SEMICONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-4-SEMICONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/4-semibold-SEMICONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-4-CONDENSED";
+  src: url("../../fonts/ibm_plex_sans/4-semibold-CONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-4-CONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/4-semibold-CONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-5";
+  src: url("../../fonts/ibm_plex_sans/5-medium-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-5-ITALIC";
+  src: url("../../fonts/ibm_plex_sans/5-medium-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-5-SEMICONDENSED";
+  src: url("../../fonts/ibm_plex_sans/5-medium-SEMICONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-5-SEMICONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/5-medium-SEMICONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-5-CONDENSED";
+  src: url("../../fonts/ibm_plex_sans/5-medium-CONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-5-CONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/5-medium-CONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-6";
+  src: url("../../fonts/ibm_plex_sans/6-regular-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-6-ITALIC";
+  src: url("../../fonts/ibm_plex_sans/6-regular-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-6-SEMICONDENSED";
+  src: url("../../fonts/ibm_plex_sans/6-regular-SEMICONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-6-SEMICONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/6-regular-SEMICONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-6-CONDENSED";
+  src: url("../../fonts/ibm_plex_sans/6-regular-CONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-6-CONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/6-regular-CONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-7";
+  src: url("../../fonts/ibm_plex_sans/7-light-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-7-ITALIC";
+  src: url("../../fonts/ibm_plex_sans/7-light-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-7-SEMICONDENSED";
+  src: url("../../fonts/ibm_plex_sans/7-light-SEMICONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-7-SEMICONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/7-light-SEMICONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-7-CONDENSED";
+  src: url("../../fonts/ibm_plex_sans/7-light-CONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-7-CONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/7-light-CONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-8";
+  src: url("../../fonts/ibm_plex_sans/8-extralight-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-8-ITALIC";
+  src: url("../../fonts/ibm_plex_sans/8-extralight-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-8-SEMICONDENSED";
+  src: url("../../fonts/ibm_plex_sans/8-extralight-SEMICONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-8-SEMICONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/8-extralight-SEMICONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-8-CONDENSED";
+  src: url("../../fonts/ibm_plex_sans/8-extralight-CONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-8-CONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/8-extralight-CONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-9";
+  src: url("../../fonts/ibm_plex_sans/9-thin-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-9-ITALIC";
+  src: url("../../fonts/ibm_plex_sans/9-thin-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-9-SEMICONDENSED";
+  src: url("../../fonts/ibm_plex_sans/9-thin-SEMICONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-9-SEMICONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/9-thin-SEMICONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-9-CONDENSED";
+  src: url("../../fonts/ibm_plex_sans/9-thin-CONDENSED.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSans-9-CONDENSED_ITALIC";
+  src: url("../../fonts/ibm_plex_sans/9-thin-CONDENSED_ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-3";
+  src: url("../../fonts/ibm_plex_serif/3-bold-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-3-ITALIC";
+  src: url("../../fonts/ibm_plex_serif/3-bold-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-4";
+  src: url("../../fonts/ibm_plex_serif/4-semibold-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-4-ITALIC";
+  src: url("../../fonts/ibm_plex_serif/4-semibold-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-5";
+  src: url("../../fonts/ibm_plex_serif/5-medium-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-5-ITALIC";
+  src: url("../../fonts/ibm_plex_serif/5-medium-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-6";
+  src: url("../../fonts/ibm_plex_serif/6-regular-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-6-ITALIC";
+  src: url("../../fonts/ibm_plex_serif/6-regular-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-7";
+  src: url("../../fonts/ibm_plex_serif/7-light-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-7-ITALIC";
+  src: url("../../fonts/ibm_plex_serif/7-light-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-8";
+  src: url("../../fonts/ibm_plex_serif/8-extralight-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-8-ITALIC";
+  src: url("../../fonts/ibm_plex_serif/8-extralight-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-9";
+  src: url("../../fonts/ibm_plex_serif/9-thin-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexSerif-9-ITALIC";
+  src: url("../../fonts/ibm_plex_serif/9-thin-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-3";
+  src: url("../../fonts/ibm_plex_mono/3-bold-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-3-ITALIC";
+  src: url("../../fonts/ibm_plex_mono/3-bold-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-4";
+  src: url("../../fonts/ibm_plex_mono/4-semibold-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-4-ITALIC";
+  src: url("../../fonts/ibm_plex_mono/4-semibold-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-5";
+  src: url("../../fonts/ibm_plex_mono/5-medium-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-5-ITALIC";
+  src: url("../../fonts/ibm_plex_mono/5-medium-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-6";
+  src: url("../../fonts/ibm_plex_mono/6-regular-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-6-ITALIC";
+  src: url("../../fonts/ibm_plex_mono/6-regular-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-7";
+  src: url("../../fonts/ibm_plex_mono/7-light-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-7-ITALIC";
+  src: url("../../fonts/ibm_plex_mono/7-light-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-8";
+  src: url("../../fonts/ibm_plex_mono/8-extralight-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-8-ITALIC";
+  src: url("../../fonts/ibm_plex_mono/8-extralight-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-9";
+  src: url("../../fonts/ibm_plex_mono/9-thin-BASIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IBMPlexMono-9-ITALIC";
+  src: url("../../fonts/ibm_plex_mono/9-thin-ITALIC.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.DEV-DISABLE_SELECTION {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.DEV-DISABLE_VISIBILITY {
+  display: none;
+}
+
+.DEV-DISABLE_HEIGHT {
+  height: 0 !important;
+}
+
+@media screen and (min-aspect-ratio: 1.6666666667) {
+  .S-MOBILE-wrapper {
+    display: none;
+  }
+  .S-DESKTOP-wrapper {
+    display: unset;
+  }
+  .S-DESKTOP-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8vh 92vh;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  .S-DESKTOP-carcass .S-DESKTOP-header {
+    background-color: pink;
+    grid-area: 1/1/2/2;
+  }
+  .S-DESKTOP-carcass .S-DESKTOP-surfer {
+    background-color: aquamarine;
+    grid-area: 2/1/3/2;
+  }
+  .S-DESKTOP-carcass .S-DESKTOP-overlay {
+    grid-area: 1/1/3/2;
+    background-color: #000000;
+    filter: opacity(50%);
+    z-index: 20;
+  }
+  .S-HEADER-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass {
+    background-color: #ff7fcc;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 8vh;
+    width: 100%;
+    max-width: 150vh;
+    margin: 0 20vh;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo {
+    grid-area: 1/1/2/2;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content {
+    grid-area: 1/2/2/3;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 8vh;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-projects {
+    background-color: #ff0000;
+    grid-area: 1/1/2/2;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-about {
+    background-color: #ff5900;
+    grid-area: 1/2/2/3;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-contacts {
+    background-color: #fffb00;
+    grid-area: 1/3/2/4;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-other {
+    background-color: #48ff00;
+    grid-area: 1/4/2/5;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages {
+    background-color: #00eaff;
+    grid-area: 1/5/2/6;
+    width: 8vh;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay {
+    grid-area: 1/1/2/6;
+    margin-top: 8vh;
+    z-index: 10;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-carcass {
+    display: grid;
+    grid-template-columns: 1fr 8vh;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-projects {
+    background-color: #63a7ae;
+    grid-area: 1/1/2/2;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-other {
+    background-color: #816ee1;
+    grid-area: 1/1/2/2;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-languages {
+    background-color: #0b4e51;
+    grid-area: 1/2/2/3;
+  }
+}
+@media screen and (max-aspect-ratio: 1.6666666667) and (min-aspect-ratio: 1.0526315789) {
+  .S-MOBILE-wrapper {
+    display: none;
+  }
+  .S-DESKTOP-wrapper {
+    display: unset;
+  }
+  .S-DESKTOP-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8vh 92vh;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  .S-DESKTOP-carcass .S-DESKTOP-header {
+    background-color: pink;
+    grid-area: 1/1/2/2;
+  }
+  .S-DESKTOP-carcass .S-DESKTOP-surfer {
+    background-color: aquamarine;
+    grid-area: 2/1/3/2;
+  }
+  .S-DESKTOP-carcass .S-DESKTOP-overlay {
+    grid-area: 1/1/3/2;
+    background-color: #000000;
+    filter: opacity(50%);
+    z-index: 20;
+  }
+  .S-HEADER-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass {
+    background-color: #ff7fcc;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 8vh;
+    width: 100%;
+    max-width: 150vh;
+    margin: 0 20vh;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo {
+    grid-area: 1/1/2/2;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content {
+    grid-area: 1/2/2/3;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    height: 8vh;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-projects {
+    background-color: #ff0000;
+    grid-area: 1/1/2/2;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-about {
+    background-color: #ff5900;
+    grid-area: 1/2/2/3;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-contacts {
+    background-color: #fffb00;
+    grid-area: 1/3/2/4;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-other {
+    background-color: #48ff00;
+    grid-area: 1/4/2/5;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages {
+    background-color: #00eaff;
+    grid-area: 1/5/2/6;
+    width: 8vh;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay {
+    grid-area: 1/1/2/6;
+    margin-top: 8vh;
+    z-index: 10;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-carcass {
+    display: grid;
+    grid-template-columns: 1fr 8vh;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-projects {
+    background-color: #63a7ae;
+    grid-area: 1/1/2/2;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-other {
+    background-color: #816ee1;
+    grid-area: 1/1/2/2;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-languages {
+    background-color: #0b4e51;
+    grid-area: 1/2/2/3;
+  }
+}
+@media screen and (max-aspect-ratio: 1.0526315789) and (min-aspect-ratio: 0.7142857143) {
+  .S-MOBILE-wrapper {
+    display: unset;
+  }
+  .S-DESKTOP-wrapper {
+    display: none;
+  }
+}
+@media screen and (max-aspect-ratio: 0.7142857143) {
+  .S-MOBILE-wrapper {
+    display: unset;
+  }
+  .S-DESKTOP-wrapper {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=final.bundle.css.map */

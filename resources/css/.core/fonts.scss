@@ -1,0 +1,561 @@
+////  EITAI
+//@font-face {
+//    font-family: "Eitai-3";
+//    src: url('../../fonts/eitai/3-bold-BASIC.otf') format('opentype');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+
+
+
+////  KIYOSUNA
+//@font-face {
+//    font-family: "Kiyosuna-3";
+//    src: url('../../fonts/kiyosuna/3-bold-BASIC.woff2') format('woff2'),
+//    url('../../fonts/kiyosuna/3-bold-BASIC.otf') format('opentype');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+//@font-face {
+//    font-family: "Kiyosuna-7";
+//    src: url('../../fonts/kiyosuna/7-light-BASIC.woff2') format('woff2'),
+//    url('../../fonts/kiyosuna/7-light-BASIC.otf') format('opentype');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+
+
+
+////  ONDER
+//@font-face {
+//    font-family: "Onder-3";
+//    src: url('../../fonts/onder/3-bold-BASIC.ttf') format('truetype');
+//    font-weight: normal;
+//    font-style: normal;
+//}
+
+
+
+//  MIN SANS
+@font-face {
+    font-family: "MinSans-1";
+    src: url('../../fonts/min_sans/1-black-BASIC.woff2') format('woff2'),
+    url('../../fonts/min_sans/1-black-BASIC.otf') format('opentype'),
+    url('../../fonts/min_sans/1-black-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MinSans-3";
+    src: url('../../fonts/min_sans/3-bold-BASIC.woff2') format('woff2'),
+    url('../../fonts/min_sans/3-bold-BASIC.otf') format('opentype'),
+    url('../../fonts/min_sans/3-bold-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MinSans-5";
+    src: url('../../fonts/min_sans/5-medium-BASIC.woff2') format('woff2'),
+    url('../../fonts/min_sans/5-medium-BASIC.otf') format('opentype'),
+    url('../../fonts/min_sans/5-medium-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MinSans-6";
+    src: url('../../fonts/min_sans/6-regular-BASIC.woff2') format('woff2'),
+    url('../../fonts/min_sans/6-regular-BASIC.otf') format('opentype'),
+    url('../../fonts/min_sans/6-regular-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MinSans-7";
+    src: url('../../fonts/min_sans/7-light-BASIC.woff2') format('woff2'),
+    url('../../fonts/min_sans/7-light-BASIC.otf') format('opentype'),
+    url('../../fonts/min_sans/7-light-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MinSans-9";
+    src: url('../../fonts/min_sans/9-thin-BASIC.woff2') format('woff2'),
+    url('../../fonts/min_sans/9-thin-BASIC.otf') format('opentype'),
+    url('../../fonts/min_sans/9-thin-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+//  IBM PLEX SANS
+
+//  BOLD (3)
+@font-face {
+    font-family: "IBMPlexSans-3";
+    src: url('../../fonts/ibm_plex_sans/3-bold-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-3-ITALIC";
+    src: url('../../fonts/ibm_plex_sans/3-bold-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-3-SEMICONDENSED";
+    src: url('../../fonts/ibm_plex_sans/3-bold-SEMICONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-3-SEMICONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/3-bold-SEMICONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-3-CONDENSED";
+    src: url('../../fonts/ibm_plex_sans/3-bold-CONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-3-CONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/3-bold-CONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  SEMIBOLD (4)
+@font-face {
+    font-family: "IBMPlexSans-4";
+    src: url('../../fonts/ibm_plex_sans/4-semibold-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-4-ITALIC";
+    src: url('../../fonts/ibm_plex_sans/4-semibold-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-4-SEMICONDENSED";
+    src: url('../../fonts/ibm_plex_sans/4-semibold-SEMICONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-4-SEMICONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/4-semibold-SEMICONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-4-CONDENSED";
+    src: url('../../fonts/ibm_plex_sans/4-semibold-CONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-4-CONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/4-semibold-CONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  MEDIUM (5)
+@font-face {
+    font-family: "IBMPlexSans-5";
+    src: url('../../fonts/ibm_plex_sans/5-medium-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-5-ITALIC";
+    src: url('../../fonts/ibm_plex_sans/5-medium-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-5-SEMICONDENSED";
+    src: url('../../fonts/ibm_plex_sans/5-medium-SEMICONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-5-SEMICONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/5-medium-SEMICONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-5-CONDENSED";
+    src: url('../../fonts/ibm_plex_sans/5-medium-CONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-5-CONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/5-medium-CONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  REGULAR (6)
+@font-face {
+    font-family: "IBMPlexSans-6";
+    src: url('../../fonts/ibm_plex_sans/6-regular-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-6-ITALIC";
+    src: url('../../fonts/ibm_plex_sans/6-regular-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-6-SEMICONDENSED";
+    src: url('../../fonts/ibm_plex_sans/6-regular-SEMICONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-6-SEMICONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/6-regular-SEMICONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-6-CONDENSED";
+    src: url('../../fonts/ibm_plex_sans/6-regular-CONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-6-CONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/6-regular-CONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  LIGHT (7)
+@font-face {
+    font-family: "IBMPlexSans-7";
+    src: url('../../fonts/ibm_plex_sans/7-light-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-7-ITALIC";
+    src: url('../../fonts/ibm_plex_sans/7-light-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-7-SEMICONDENSED";
+    src: url('../../fonts/ibm_plex_sans/7-light-SEMICONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-7-SEMICONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/7-light-SEMICONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-7-CONDENSED";
+    src: url('../../fonts/ibm_plex_sans/7-light-CONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-7-CONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/7-light-CONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  EXTRALIGHT (8)
+@font-face {
+    font-family: "IBMPlexSans-8";
+    src: url('../../fonts/ibm_plex_sans/8-extralight-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-8-ITALIC";
+    src: url('../../fonts/ibm_plex_sans/8-extralight-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-8-SEMICONDENSED";
+    src: url('../../fonts/ibm_plex_sans/8-extralight-SEMICONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-8-SEMICONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/8-extralight-SEMICONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-8-CONDENSED";
+    src: url('../../fonts/ibm_plex_sans/8-extralight-CONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-8-CONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/8-extralight-CONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  THIN (9)
+@font-face {
+    font-family: "IBMPlexSans-9";
+    src: url('../../fonts/ibm_plex_sans/9-thin-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-9-ITALIC";
+    src: url('../../fonts/ibm_plex_sans/9-thin-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-9-SEMICONDENSED";
+    src: url('../../fonts/ibm_plex_sans/9-thin-SEMICONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-9-SEMICONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/9-thin-SEMICONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-9-CONDENSED";
+    src: url('../../fonts/ibm_plex_sans/9-thin-CONDENSED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSans-9-CONDENSED_ITALIC";
+    src: url('../../fonts/ibm_plex_sans/9-thin-CONDENSED_ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+//  IBM PLEX SERIF
+
+//  BOLD (3)
+@font-face {
+    font-family: "IBMPlexSerif-3";
+    src: url('../../fonts/ibm_plex_serif/3-bold-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSerif-3-ITALIC";
+    src: url('../../fonts/ibm_plex_serif/3-bold-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  SEMIBOLD (4)
+@font-face {
+    font-family: "IBMPlexSerif-4";
+    src: url('../../fonts/ibm_plex_serif/4-semibold-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSerif-4-ITALIC";
+    src: url('../../fonts/ibm_plex_serif/4-semibold-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  MEDIUM (5)
+@font-face {
+    font-family: "IBMPlexSerif-5";
+    src: url('../../fonts/ibm_plex_serif/5-medium-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSerif-5-ITALIC";
+    src: url('../../fonts/ibm_plex_serif/5-medium-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  REGULAR (6)
+@font-face {
+    font-family: "IBMPlexSerif-6";
+    src: url('../../fonts/ibm_plex_serif/6-regular-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSerif-6-ITALIC";
+    src: url('../../fonts/ibm_plex_serif/6-regular-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  LIGHT (7)
+@font-face {
+    font-family: "IBMPlexSerif-7";
+    src: url('../../fonts/ibm_plex_serif/7-light-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSerif-7-ITALIC";
+    src: url('../../fonts/ibm_plex_serif/7-light-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  EXTRALIGHT (8)
+@font-face {
+    font-family: "IBMPlexSerif-8";
+    src: url('../../fonts/ibm_plex_serif/8-extralight-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSerif-8-ITALIC";
+    src: url('../../fonts/ibm_plex_serif/8-extralight-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  THIN (9)
+@font-face {
+    font-family: "IBMPlexSerif-9";
+    src: url('../../fonts/ibm_plex_serif/9-thin-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexSerif-9-ITALIC";
+    src: url('../../fonts/ibm_plex_serif/9-thin-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+//  IBM PLEX MONO
+
+//  BOLD (3)
+@font-face {
+    font-family: "IBMPlexMono-3";
+    src: url('../../fonts/ibm_plex_mono/3-bold-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexMono-3-ITALIC";
+    src: url('../../fonts/ibm_plex_mono/3-bold-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  SEMIBOLD (4)
+@font-face {
+    font-family: "IBMPlexMono-4";
+    src: url('../../fonts/ibm_plex_mono/4-semibold-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexMono-4-ITALIC";
+    src: url('../../fonts/ibm_plex_mono/4-semibold-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  MEDIUM (5)
+@font-face {
+    font-family: "IBMPlexMono-5";
+    src: url('../../fonts/ibm_plex_mono/5-medium-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexMono-5-ITALIC";
+    src: url('../../fonts/ibm_plex_mono/5-medium-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  REGULAR (6)
+@font-face {
+    font-family: "IBMPlexMono-6";
+    src: url('../../fonts/ibm_plex_mono/6-regular-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexMono-6-ITALIC";
+    src: url('../../fonts/ibm_plex_mono/6-regular-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  LIGHT (7)
+@font-face {
+    font-family: "IBMPlexMono-7";
+    src: url('../../fonts/ibm_plex_mono/7-light-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexMono-7-ITALIC";
+    src: url('../../fonts/ibm_plex_mono/7-light-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  EXTRALIGHT (8)
+@font-face {
+    font-family: "IBMPlexMono-8";
+    src: url('../../fonts/ibm_plex_mono/8-extralight-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexMono-8-ITALIC";
+    src: url('../../fonts/ibm_plex_mono/8-extralight-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//  THIN (9)
+@font-face {
+    font-family: "IBMPlexMono-9";
+    src: url('../../fonts/ibm_plex_mono/9-thin-BASIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "IBMPlexMono-9-ITALIC";
+    src: url('../../fonts/ibm_plex_mono/9-thin-ITALIC.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

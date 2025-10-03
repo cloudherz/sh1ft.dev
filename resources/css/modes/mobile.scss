@@ -1,0 +1,19 @@
+@mixin MOBILE_MODES($MODE) {
+    $MODE_VALUES: map-get($MOBILE_MODES, $MODE);
+
+
+
+    //  CHUNK:MOBILE
+    .S-MOBILE-wrapper {
+        display: unset;
+    }
+    .S-DESKTOP-wrapper {
+        display: none;
+    }
+
+
+
+    //  CHUNK:
+    //  LOCAL VARIABLES NAME =
+
+}

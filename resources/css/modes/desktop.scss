@@ -1,0 +1,162 @@
+@mixin DESKTOP_MODES($MODE) {
+    $MODE_VALUES: map-get($DESKTOP_MODES, $MODE);
+
+
+
+    //  CHUNK:DESKTOP
+    .S-MOBILE-wrapper {
+        display: none;
+    }
+    .S-DESKTOP-wrapper {
+        display: unset;
+    }
+
+
+
+    //  CHUNK:CORE
+    //  LOCAL VARIABLES NAME = CORE
+    $LV-D-CORE-HEADER_HEIGHT: 8vh;
+    .S-DESKTOP-carcass {
+        //  CSS-GRID SETUP
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: $LV-D-CORE-HEADER_HEIGHT 100vh - $LV-D-CORE-HEADER_HEIGHT;
+        grid-column-gap: 0;
+        grid-row-gap: 0;
+        //  SCALING
+        height: 100vh;
+        width: 100vw;
+
+        .S-DESKTOP-header {
+            background-color: pink;
+            //  CSS-GRID CONFIGURATION
+            grid-area: 1 / 1 / 2 / 2;
+        }
+        .S-DESKTOP-surfer {
+            background-color: aquamarine;
+            //  CSS-GRID CONFIGURATION
+            grid-area: 2 / 1 / 3 / 2;
+        }
+        .S-DESKTOP-overlay {
+            //  CSS-GRID CONFIGURATION
+            grid-area: 1 / 1 / 3 / 2;
+            //  BACKGROUND
+            background-color: $PALETTE-VOID;
+            filter: opacity(50%);
+            //  LAYERING
+            z-index: 20;
+        }
+    }
+
+
+
+    //  CHUNK:HEADER
+    //  LOCAL VARIABLES NAME = HEADER
+    .S-HEADER-wrapper {
+        //  FLEXBOX
+        display: flex;
+        justify-content: center;
+
+        .S-HEADER-carcass {
+            background-color: #ff7fcc;
+            //  CSS-GRID SETUP
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            grid-template-rows: 1fr;
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+            //  SCALING
+            height: $LV-D-CORE-HEADER_HEIGHT;
+            width: 100%;
+            max-width: 150vh;
+            //  MARGINS & PADDINGS
+            margin: 0 $GV-D-HORIZONTAL_MARGINS;
+
+            .S-HEADER-logo {
+                //  CSS-GRID CONFIGURATION
+                grid-area: 1 / 1 / 2 / 2;
+                //  FLEXBOX
+                display: flex;
+                justify-content: flex-start;
+            }
+            .S-HEADER-content {
+                //  CSS-GRID CONFIGURATION
+                grid-area: 1 / 2 / 2 / 3;
+                //  FLEXBOX
+                display: flex;
+                justify-content: flex-end;
+
+                .S-CONTENT-carcass {
+                    //  CSS-GRID SETUP
+                    display: grid;
+                    grid-template-columns: repeat(5, max-content);
+                    grid-template-rows: 1fr;
+                    grid-column-gap: 0;
+                    grid-row-gap: 0;
+                    //  SCALING
+                    height: $LV-D-CORE-HEADER_HEIGHT;
+
+                    .S-CONTENT-projects {
+                        background-color: #ff0000;
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 1 / 2 / 2;
+                    }
+                    .S-CONTENT-about {
+                        background-color: #ff5900;
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 2 / 2 / 3;
+                    }
+                    .S-CONTENT-contacts {
+                        background-color: #fffb00;
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 3 / 2 / 4;
+                    }
+                    .S-CONTENT-other {
+                        background-color: #48ff00;
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 4 / 2 / 5;
+                    }
+                    .S-CONTENT-languages {
+                        background-color: #00eaff;
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 5 / 2 / 6;
+                        //  SCALING
+                        width: $LV-D-CORE-HEADER_HEIGHT;
+                    }
+                    .S-CONTENT-overlay {
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 1 / 2 / 6;
+                        //  MARGINS & PADDINGS
+                        margin-top: $LV-D-CORE-HEADER_HEIGHT;
+                        //  LAYERING
+                        z-index: 10;
+
+                        .S-OVERLAY-carcass {
+                            //  CSS-GRID SETUP
+                            display: grid;
+                            grid-template-columns: 1fr $LV-D-CORE-HEADER_HEIGHT;
+                            grid-template-rows: 1fr;
+                            grid-column-gap: 0;
+                            grid-row-gap: 0;
+                        }
+                        .S-OVERLAY-projects {
+                            background-color: #63a7ae;
+                            //  CSS-GRID CONFIGURATION
+                            grid-area: 1 / 1 / 2 / 2;
+                        }
+                        .S-OVERLAY-other {
+                            background-color: #816ee1;
+                            //  CSS-GRID CONFIGURATION
+                            grid-area: 1 / 1 / 2 / 2;
+                        }
+                        .S-OVERLAY-languages {
+                            background-color: #0b4e51;
+                            //  CSS-GRID CONFIGURATION
+                            grid-area: 1 / 2 / 2 / 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+//  GLOBAL MARGINS & PADDINGS RESET
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+//  GLOBAL SETTINGS OVERRIDE
+body {
+    //  BACKGROUND
+    background: $PALETTE-BLACK;
+    //  FONT SETTINGS
+    font-family: 'MinSans-5', sans-serif;
+    color: $PALETTE-SNOW;
+}
+
+
+
+//  DISABLING SCROLL
+::-webkit-scrollbar {
+    //  CHROME, SAFARI, EDGE, OPERA
+    display: none;
+    width: 0;
+    background: transparent;
+}
+* {
+    //  FIREFOX
+    scrollbar-width: none;
+    //  INTERNET EXPLORER, OLD EDGE
+    -ms-overflow-style: none;
+}
