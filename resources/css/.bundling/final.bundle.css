@@ -487,10 +487,6 @@ body {
   display: none;
 }
 
-.DEV-DISABLE_HEIGHT {
-  height: 0 !important;
-}
-
 @media screen and (min-aspect-ratio: 1.6666666667) {
   .S-MOBILE-wrapper {
     display: none;
@@ -499,27 +495,13 @@ body {
     display: unset;
   }
   .S-DESKTOP-carcass {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 8vh 92vh;
-    grid-column-gap: 0;
-    grid-row-gap: 0;
     height: 100vh;
     width: 100vw;
   }
   .S-DESKTOP-carcass .S-DESKTOP-header {
-    background-color: pink;
-    grid-area: 1/1/2/2;
-  }
-  .S-DESKTOP-carcass .S-DESKTOP-surfer {
     background-color: aquamarine;
-    grid-area: 2/1/3/2;
-  }
-  .S-DESKTOP-carcass .S-DESKTOP-overlay {
-    grid-area: 1/1/3/2;
-    background-color: #000000;
-    filter: opacity(50%);
-    z-index: 20;
+    position: fixed;
+    width: 100vw;
   }
   .S-HEADER-wrapper {
     display: flex;
@@ -550,7 +532,7 @@ body {
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass {
     display: grid;
     grid-template-columns: repeat(5, max-content);
-    grid-template-rows: 1fr;
+    grid-template-rows: 8vh max-content;
     grid-column-gap: 0;
     grid-row-gap: 0;
     height: 8vh;
@@ -576,29 +558,34 @@ body {
     grid-area: 1/5/2/6;
     width: 8vh;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay {
-    grid-area: 1/1/2/6;
-    margin-top: 8vh;
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays {
+    grid-area: 2/1/3/6;
     z-index: 10;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-carcass {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass {
     display: grid;
     grid-template-columns: 1fr 8vh;
     grid-template-rows: 1fr;
     grid-column-gap: 0;
     grid-row-gap: 0;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-projects {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-all {
+    transition: opacity 0.2s;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-projects {
     background-color: #63a7ae;
     grid-area: 1/1/2/2;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-other {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-other {
     background-color: #816ee1;
     grid-area: 1/1/2/2;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-languages {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-languages {
     background-color: #0b4e51;
     grid-area: 1/2/2/3;
+  }
+  .S-DESKTOP-surfer {
+    padding-top: 8vh;
   }
 }
 @media screen and (max-aspect-ratio: 1.6666666667) and (min-aspect-ratio: 1.0526315789) {
@@ -609,27 +596,13 @@ body {
     display: unset;
   }
   .S-DESKTOP-carcass {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 8vh 92vh;
-    grid-column-gap: 0;
-    grid-row-gap: 0;
     height: 100vh;
     width: 100vw;
   }
   .S-DESKTOP-carcass .S-DESKTOP-header {
-    background-color: pink;
-    grid-area: 1/1/2/2;
-  }
-  .S-DESKTOP-carcass .S-DESKTOP-surfer {
     background-color: aquamarine;
-    grid-area: 2/1/3/2;
-  }
-  .S-DESKTOP-carcass .S-DESKTOP-overlay {
-    grid-area: 1/1/3/2;
-    background-color: #000000;
-    filter: opacity(50%);
-    z-index: 20;
+    position: fixed;
+    width: 100vw;
   }
   .S-HEADER-wrapper {
     display: flex;
@@ -660,7 +633,7 @@ body {
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass {
     display: grid;
     grid-template-columns: repeat(5, max-content);
-    grid-template-rows: 1fr;
+    grid-template-rows: 8vh max-content;
     grid-column-gap: 0;
     grid-row-gap: 0;
     height: 8vh;
@@ -686,29 +659,34 @@ body {
     grid-area: 1/5/2/6;
     width: 8vh;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay {
-    grid-area: 1/1/2/6;
-    margin-top: 8vh;
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays {
+    grid-area: 2/1/3/6;
     z-index: 10;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-carcass {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass {
     display: grid;
     grid-template-columns: 1fr 8vh;
     grid-template-rows: 1fr;
     grid-column-gap: 0;
     grid-row-gap: 0;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-projects {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-all {
+    transition: opacity 0.2s;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-projects {
     background-color: #63a7ae;
     grid-area: 1/1/2/2;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-other {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-other {
     background-color: #816ee1;
     grid-area: 1/1/2/2;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlay .S-OVERLAY-languages {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-languages {
     background-color: #0b4e51;
     grid-area: 1/2/2/3;
+  }
+  .S-DESKTOP-surfer {
+    padding-top: 8vh;
   }
 }
 @media screen and (max-aspect-ratio: 1.0526315789) and (min-aspect-ratio: 0.7142857143) {

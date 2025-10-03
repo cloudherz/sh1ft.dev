@@ -49,32 +49,32 @@
                         </div>
                         <div class="S-HEADER-content">
                             <div class="S-CONTENT-wrapper">
-                                <div class="S-CONTENT-carcass" id="DESKTOP-HEADER-carcass">
-                                    <div class="S-CONTENT-projects" id="DESKTOP-HEADER-projects">
+                                <div class="S-CONTENT-carcass" id="DESKTOP-HEADER_CONTENT-carcass">
+                                    <div class="S-CONTENT-projects" id="DESKTOP-HEADER_OVERLAY_TRIGGER-projects">
                                         Projects
                                     </div>
-                                    <div class="S-CONTENT-about" id="DESKTOP-HEADER-about">
+                                    <div class="S-CONTENT-about" id="DESKTOP-HEADER_OVERLAY_TRIGGER-about">
                                         About
                                     </div>
-                                    <div class="S-CONTENT-contacts" id="DESKTOP-HEADER-contacts">
+                                    <div class="S-CONTENT-contacts" id="DESKTOP-HEADER_OVERLAY_TRIGGER-contacts">
                                         Contacts
                                     </div>
-                                    <div class="S-CONTENT-other" id="DESKTOP-HEADER-other">
+                                    <div class="S-CONTENT-other" id="DESKTOP-HEADER_OVERLAY_TRIGGER-other">
                                         Other
                                     </div>
-                                    <div class="S-CONTENT-languages" id="DESKTOP-HEADER-languages">
+                                    <div class="S-CONTENT-languages" id="DESKTOP-HEADER_OVERLAY_TRIGGER-languages">
                                         EN
                                     </div>
-                                    <div class="S-CONTENT-overlay">
-                                        <div class="S-OVERLAY-wrapper">
-                                            <div class="S-OVERLAY-carcass" id="DESKTOP-HEADER_OVERLAY-carcass">
-                                                <div class="S-OVERLAY-projects DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-projects">
+                                    <div class="S-CONTENT-overlays">
+                                        <div class="S-OVERLAYS-wrapper">
+                                            <div class="S-OVERLAYS-carcass">
+                                                <div class="S-OVERLAY-projects S-OVERLAY-all DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-projects">
                                                     projects
                                                 </div>
-                                                <div class="S-OVERLAY-other DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-other">
+                                                <div class="S-OVERLAY-other S-OVERLAY-all DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-other">
                                                     other
                                                 </div>
-                                                <div class="S-OVERLAY-languages DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-languages">
+                                                <div class="S-OVERLAY-languages S-OVERLAY-all DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-languages">
                                                     langs
                                                 </div>
                                             </div>
@@ -89,7 +89,7 @@
             <div class="S-DESKTOP-surfer">
                 @yield('mode-desktop')
             </div>
-            <div class="S-DESKTOP-overlay DEV-DISABLE_VISIBILITY" id="pizda">
+            <div class="S-DESKTOP-overlay DEV-DISABLE_VISIBILITY">
 
             </div>
         </div>
@@ -103,7 +103,7 @@
     <x-js.console.splash/>
     <x-js.livewire.delay/>
     <x-js.transitions.opacity/>
-    <x-js.header.overlay/>
+    <x-js.header.overlays/>
     @yield('scripts')
 </body>
 </html>
