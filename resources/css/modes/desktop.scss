@@ -15,17 +15,23 @@
 
     //  CHUNK:CORE
     //  LOCAL VARIABLES NAME = CORE
+    $LV-D-BORDERS: $GV-D-BORDER_WIDTH solid $PALETTE-SLATE;
     .S-DESKTOP-carcass {
         //  SCALING
         height: 100vh;
         width: 100vw;
 
         .S-DESKTOP-header {
-            background-color: aquamarine;
+            //  BACKGROUND
+            background-color: $PALETTE-OBSIDIAN;
             //  POSITIONING
             position: fixed;
             //  SCALING
             width: 100vw;
+            //  BORDER
+            border-bottom: $LV-D-BORDERS;
+            //  TRANSITION
+            transition: opacity 0.2s;
         }
     }
 
@@ -33,14 +39,17 @@
 
     //  CHUNK:HEADER
     //  LOCAL VARIABLES NAME = HEADER
-    $LV-D-HEADER-HEIGHT: 8vh;
+    $LV-D-HEADER-HEIGHT: 7.5vh;
+    $LV-D-HEADER-RESPONSIVE_HORIZONTAL_MARGINS-MAX_WIDTH_VALUE: map-get($MODE_VALUES, LV-D-HEADER-RESPONSIVE_HORIZONTAL_MARGINS-MAX_WIDTH_VALUE);
+    $LV-D-HEADER-RESPONSIVE_HORIZONTAL_MARGINS-MARGIN_VALUE: map-get($MODE_VALUES, LV-D-HEADER-RESPONSIVE_HORIZONTAL_MARGINS-MARGIN_VALUE);
+    $LV-D-HEADER-LOGO_TOGGLE_MAIN: map-get($MODE_VALUES, LV-D-HEADER-LOGO_TOGGLE_MAIN);
+    $LV-D-HEADER-LOGO_TOGGLE_SLIM: map-get($MODE_VALUES, LV-D-HEADER-LOGO_TOGGLE_SLIM);
     .S-HEADER-wrapper {
         //  FLEXBOX
         display: flex;
         justify-content: center;
 
         .S-HEADER-carcass {
-            background-color: #ff7fcc;
             //  CSS-GRID SETUP
             display: grid;
             grid-template-columns: max-content 1fr;
@@ -50,9 +59,9 @@
             //  SCALING
             height: $LV-D-HEADER-HEIGHT;
             width: 100%;
-            max-width: 150vh;
+            max-width: $LV-D-HEADER-RESPONSIVE_HORIZONTAL_MARGINS-MAX_WIDTH_VALUE;
             //  MARGINS & PADDINGS
-            margin: 0 $GV-D-HORIZONTAL_MARGINS;
+            margin: $LV-D-HEADER-RESPONSIVE_HORIZONTAL_MARGINS-MARGIN_VALUE;
 
             .S-HEADER-logo {
                 //  CSS-GRID CONFIGURATION
@@ -60,6 +69,33 @@
                 //  FLEXBOX
                 display: flex;
                 justify-content: flex-start;
+                //  BORDER
+                border-left: $LV-D-BORDERS;
+                border-right: $LV-D-BORDERS;
+
+                .S-LOGO-carcass {
+                    //  FLEXBOX
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    //  SCALING
+                    height: $LV-D-HEADER-HEIGHT;
+                    //  MARGINS & PADDINGS
+                    padding: 0 $GV-D-DISTANCE-MEDIUM;
+
+                    .I-LOGO-image_responsive_main {
+                        //  SCALING
+                        height: $LV-D-HEADER-HEIGHT / 2.15;
+                        //  DISPLAY
+                        display: $LV-D-HEADER-LOGO_TOGGLE_MAIN;
+                    }
+                    .I-LOGO-image_responsive_slim {
+                        //  SCALING
+                        height: $LV-D-HEADER-HEIGHT / 2.15;
+                        //  DISPLAY
+                        display: $LV-D-HEADER-LOGO_TOGGLE_SLIM;
+                    }
+                }
             }
             .S-HEADER-content {
                 //  CSS-GRID CONFIGURATION
@@ -78,49 +114,187 @@
                     //  SCALING
                     height: $LV-D-HEADER-HEIGHT;
 
+                    .S-CONTENT-text {
+                        //  FLEXBOX
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        //  MARGINS & PADDINGS
+                        padding: 0 $GV-D-DISTANCE-MEDIUM;
+                        //  BACKGROUND
+                        background-color: $PALETTE-OBSIDIAN;
+                        //  FONT SETTINGS
+                        color: $PALETTE-ASH;
+                        //  TRANSITION
+                        transition:
+                            background-color 0.15s,
+                            color 0.2s;
+                        //  CURSOR
+                        cursor: pointer;
+
+                        .I-CONTENT-dropdown_arrow {
+                            //  SCALING
+                            height: 1.2vh;
+                            //  MARGINS & PADDINGS
+                            margin-left: $GV-D-DISTANCE-MICRO;
+                            //  TRANSITION
+                            transition:
+                                transform 0.2s ease-in-out,
+                                filter 0.2s;
+                        }
+                        .I-CONTENT-dropdown_arrow_animation {
+                            animation: KF-HEADER_DROPDOWN_ICON_CLICK_ANIMATION 0.2s ease-in-out;
+                        }
+
+                        @keyframes KF-HEADER_DROPDOWN_ICON_CLICK_ANIMATION {
+                            0% { transform: translateY(0); }
+                            50% { transform: translateY(0.2vh); }
+                            100% { transform: translateY(0); }
+                        }
+
+                    }
+                    .S-CONTENT-text:hover {
+                        //  BACKGROUND
+                        background-color: $PALETTE-MIDNIGHT;
+                        //  FONT SETTINGS
+                        color: $PALETTE-SNOW;
+
+                        .I-CONTENT-dropdown_arrow {
+                            filter: brightness(141%);
+                        }
+                    }
                     .S-CONTENT-projects {
-                        background-color: #ff0000;
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 1 / 2 / 2;
+                        //  BORDER
+                        border-left: $LV-D-BORDERS;
+                        border-right: $LV-D-BORDERS;
                     }
                     .S-CONTENT-about {
-                        background-color: #ff5900;
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 2 / 2 / 3;
+                        //  BORDER
+                        border-right: $LV-D-BORDERS;
                     }
                     .S-CONTENT-contacts {
-                        background-color: #fffb00;
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 3 / 2 / 4;
+                        //  BORDER
+                        border-right: $LV-D-BORDERS;
                     }
                     .S-CONTENT-other {
-                        background-color: #48ff00;
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 4 / 2 / 5;
                     }
-                    .S-CONTENT-languages {
-                        background-color: #00eaff;
+                    .S-CONTENT-blank {
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 5 / 2 / 6;
                         //  SCALING
+                        width: 0;
+                        //  BORDER
+                        border-right: $LV-D-BORDERS;
+                        //  BACKGROUND
+                        background-color: $PALETTE-SLATE;
+                    }
+                    .S-CONTENT-languages {
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 6 / 2 / 7;
+                        //  BORDER
+                        border-right: $LV-D-BORDERS;
+                        //  SCALING
                         width: $LV-D-HEADER-HEIGHT;
+                        //  FLEXBOX
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        //  POSITIONING
+                        position: relative;
+                        //  TRANSITION
+                        transition:
+                            background-color 0.15s,
+                            color 0.2s;
+                        //  CURSOR
+                        cursor: pointer;
+
+                        .I-CONTENT-languages_all {
+                            //  POSITIONING
+                            position: absolute;
+                            //  TRANSITION
+                            transition:
+                                transform 0.2s ease-in-out,
+                                filter 0.2s;
+                        }
+                        .I-CONTENT-languages_combined {
+                            //  SCALING
+                            height: $LV-D-HEADER-HEIGHT / 2.15;
+                        }
+                        .I-CONTENT-languages_part1 {
+                            //  SCALING
+                            height: $LV-D-HEADER-HEIGHT / 2.8116;
+                            //  POSITIONING
+                            margin-right: 0.8vh;
+                            margin-bottom: 0.7vh;
+                        }
+                        .I-CONTENT-languages_part2 {
+                            //  SCALING
+                            height: $LV-D-HEADER-HEIGHT / 3.3975;
+                            //  POSITIONING
+                            margin-left: 1.5vh;
+                            margin-top: 1.1vh;
+                        }
+                        .I-CONTENT-languages_icon_part1_animation {
+                            animation: KF-HEADER_LANGUAGES_ICON_PART1_ANIMATION 0.2s ease-in-out;
+                        }
+                        .I-CONTENT-languages_icon_part2_animation {
+                            animation: KF-HEADER_LANGUAGES_ICON_PART2_ANIMATION 0.2s ease-in-out;
+                        }
+
+                        @keyframes KF-HEADER_LANGUAGES_ICON_PART1_ANIMATION {
+                            20% { transform: translateY(0); }
+                            70% { transform: translateY(0.2vh); }
+                            120% { transform: translateY(0); }
+                        }
+                        @keyframes KF-HEADER_LANGUAGES_ICON_PART2_ANIMATION {
+                            0% { transform: translateY(0); }
+                            50% { transform: translateY(0.2vh); }
+                            100% { transform: translateY(0); }
+                        }
+                    }
+                    .S-CONTENT-languages:hover {
+                        //  BACKGROUND
+                        background-color: $PALETTE-MIDNIGHT;
+                        //  FONT SETTINGS
+                        color: $PALETTE-SNOW;
+
+                        .I-CONTENT-languages_all {
+                            //  FILTER
+                            filter: brightness(141%);
+                        }
                     }
                     .S-CONTENT-overlays {
                         //  CSS-GRID CONFIGURATION
-                        grid-area: 2 / 1 / 3 / 6;
+                        grid-area: 2 / 1 / 3 / 7;
                         //  LAYERING
                         z-index: 10;
 
                         .S-OVERLAYS-carcass {
                             //  CSS-GRID SETUP
                             display: grid;
-                            grid-template-columns: 1fr $LV-D-HEADER-HEIGHT;
+                            grid-template-columns: 1fr $GV-D-BORDER_WIDTH max-content;
                             grid-template-rows: 1fr;
                             grid-column-gap: 0;
                             grid-row-gap: 0;
 
                             .S-OVERLAY-all {
+                                //  TRANSITION
                                 transition: opacity 0.2s;
+                                //  BORDER
+                                border-top: $LV-D-BORDERS;
+                                border-bottom: $LV-D-BORDERS;
+                            }
+                            .S-OVERLAY-big {
+                                //  BORDER
+                                border-left: $LV-D-BORDERS;
                             }
                             .S-OVERLAY-projects {
                                 background-color: #63a7ae;
@@ -132,10 +306,22 @@
                                 //  CSS-GRID CONFIGURATION
                                 grid-area: 1 / 1 / 2 / 2;
                             }
+                            .S-OVERLAY-blank {
+                                //  CSS-GRID CONFIGURATION
+                                grid-area: 1 / 2 / 2 / 3;
+                                //  SCALING
+                                width: $GV-D-BORDER_WIDTH;
+                                //  BACKGROUND
+                                background-color: $PALETTE-SLATE;
+                            }
                             .S-OVERLAY-languages {
                                 background-color: #0b4e51;
                                 //  CSS-GRID CONFIGURATION
-                                grid-area: 1 / 2 / 2 / 3;
+                                grid-area: 1 / 3 / 2 / 4;
+                                //  SCALING
+                                width: $LV-D-HEADER-HEIGHT;
+                                //  BORDER
+                                border-right: $LV-D-BORDERS;
                             }
                         }
                     }

@@ -13,4 +13,15 @@ export default defineConfig({
             "@": "/resources/js",
         },
     },
+    server: {
+        host: '192.168.0.107',
+        port: 5173,
+        cors: {
+            origin: [
+                'http://192.168.0.107:8000',
+                'http://127.0.0.1:8000',
+            ],
+            credentials: true
+        }
+    },
 });
