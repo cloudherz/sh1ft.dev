@@ -116,12 +116,9 @@
         </div>
     </div>
     @livewireScripts
-    <x-js.console.splash/>
     <x-js.livewire.delay/>
     <x-js.transitions.opacity/>
-    <x-js.header.overlays/>
-    <x-js.header.scroll/>
-    <x-js.zoom.detect/>
+    @vite(['resources/js/app.js'])
     @yield('scripts')
 </body>
 </html>

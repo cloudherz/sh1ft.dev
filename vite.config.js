@@ -4,13 +4,13 @@ import laravel from 'laravel-vite-plugin';
 export default defineConfig({
     plugins: [
         laravel({
-            input: ['resources/css/.bundling/final.bundle.scss', 'resources/js/app.js'],
+            input: ['resources/css/.bundling/final.bundle.scss', 'resources/js/app.ts'],
             refresh: true,
         }),
     ],
     resolve: {
         alias: {
-            "@": "/resources/js",
+            "@": "/resources/ts",
         },
     },
     server: {
