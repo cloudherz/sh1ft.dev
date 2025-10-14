@@ -42,7 +42,7 @@
 <body>
     <div class="S-DESKTOP-wrapper">
         <div class="S-DESKTOP-carcass">
-            <div class="S-DESKTOP-header" id="DESKTOP-header">
+            <header class="S-DESKTOP-header" id="DESKTOP-header">
                 <div class="S-HEADER-wrapper DEV-DISABLE_SELECTION">
                     <div class="S-HEADER-carcass">
                         <div class="S-HEADER-logo">
@@ -57,28 +57,28 @@
                             <div class="S-CONTENT-wrapper">
                                 <div class="S-CONTENT-carcass" id="DESKTOP-HEADER_CONTENT-carcass">
                                     <div class="S-CONTENT-projects S-CONTENT-text" id="DESKTOP-HEADER_OVERLAY_TRIGGER-projects">
-                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-SIZES-SWAG TYPO-VARIABLE">портфолио</p>
+                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-NORMAL TYPO-VARIABLE">портфолио</p>
                                         <img class="I-CONTENT-dropdown_arrow" id="DESKTOP-HEADER_DROPDOWN_ARROW-projects" alt="dropdown_arrow" src="images/icons/chevron_arrow_gray.svg" draggable="false">
                                     </div>
                                     <div class="S-CONTENT-about S-CONTENT-text" id="DESKTOP-HEADER_OVERLAY_BLANK_TRIGGER-about">
-                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-SIZES-SWAG TYPO-VARIABLE">обо мне</p>
+                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-NORMAL TYPO-VARIABLE">обо мне</p>
                                     </div>
                                     <div class="S-CONTENT-contacts S-CONTENT-text" id="DESKTOP-HEADER_OVERLAY_BLANK_TRIGGER-contacts">
-                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-SIZES-SWAG TYPO-VARIABLE">контакты</p>
+                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-NORMAL TYPO-VARIABLE">контакты</p>
                                     </div>
                                     <div class="S-CONTENT-other S-CONTENT-text" id="DESKTOP-HEADER_OVERLAY_TRIGGER-other">
-                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-SIZES-SWAG TYPO-VARIABLE">прочее</p>
+                                        <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-NORMAL TYPO-VARIABLE">прочее</p>
                                         <img class="I-CONTENT-dropdown_arrow" id="DESKTOP-HEADER_DROPDOWN_ARROW-other" alt="dropdown_arrow" src="images/icons/chevron_arrow_gray.svg" draggable="false">
                                     </div>
                                     <div class="S-CONTENT-blank" id="DESKTOP-HEADER_OVERLAY_TRIGGER-blank">
 
                                     </div>
                                     <div class="S-CONTENT-languages" id="DESKTOP-HEADER_OVERLAY_TRIGGER-languages">
-{{--                                        <img class="I-CONTENT-languages_combined I-CONTENT-languages_all DEV-DISABLE_VISIBILITY" alt="language_select" src="images/icons/language_gray.svg" draggable="false">--}}
+                                        {{-- <img class="I-CONTENT-languages_combined I-CONTENT-languages_all DEV-DISABLE_VISIBILITY" alt="language_select" src="images/icons/language_gray.svg" draggable="false"> --}}
                                         <img class="I-CONTENT-languages_part1 I-CONTENT-languages_all" id="DESKTOP-HEADER_DROPDOWN_LANGUAGES_ICON-part1" alt="language_select" src="images/icons/language_gray_part1.svg" draggable="false">
                                         <img class="I-CONTENT-languages_part2 I-CONTENT-languages_all" id="DESKTOP-HEADER_DROPDOWN_LANGUAGES_ICON-part2" alt="language_select" src="images/icons/language_gray_part2.svg" draggable="false">
                                     </div>
-                                    <div class="S-CONTENT-overlays">
+                                    <div class="S-CONTENT-overlays" id="DESKTOP-HEADER_OVERLAYS-parent">
                                         <div class="S-OVERLAYS-wrapper">
                                             <div class="S-OVERLAYS-carcass">
                                                 <div class="S-OVERLAY-projects S-OVERLAY-all S-OVERLAY-big DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-projects">
@@ -101,13 +101,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="S-DESKTOP-surfer">
-                @yield('mode-desktop')
-            </div>
-            <div class="S-DESKTOP-overlay DEV-DISABLE_VISIBILITY">
-
-            </div>
+            </header>
+            <main class="S-DESKTOP-surfer">
+                <div class="S-SURFER-wrapper">
+                    <div class="S-SURFER-carcass">
+                        <div class="S-SURFER-{{ str_replace('.', '_', request()->route()->getName()) }}">
+                            @yield('mode-desktop')
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <div class="S-LANDSCAPE-wrapper">
+        <div class="S-LANDSCAPE-carcass">
+            @yield('mode-landscape')
         </div>
     </div>
     <div class="S-MOBILE-wrapper">

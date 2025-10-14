@@ -83,7 +83,12 @@
 
 
 
-//  SIZES
-.TYPO-SIZES-SWAG {
-    font-size: 3vh;
-}
+//  SIZES DESKTOP
+.TYPO-D-SIZES-SMALL { font-size: $GV-D-FONT_SIZES-SMALL; }
+.TYPO-D-SIZES-NORMAL { font-size: $GV-D-FONT_SIZES-NORMAL; }
+.TYPO-D-SIZES-H5 { font-size: $GV-D-FONT_SIZES-H5; }
+.TYPO-D-SIZES-H4 { font-size: $GV-D-FONT_SIZES-H4; }
+.TYPO-D-SIZES-H3 { font-size: $GV-D-FONT_SIZES-H3; }
+.TYPO-D-SIZES-H2 { font-size: $GV-D-FONT_SIZES-H2; }
+.TYPO-D-SIZES-H1 { font-size: $GV-D-FONT_SIZES-H1; }
+

@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::view('/', 'pages.generic.welcome')->name('welcome');
+Route::view('/', 'pages.generic.home')->name('home');

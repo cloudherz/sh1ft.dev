@@ -1,4 +1,5 @@
 function headerOverlaysInteractions() {
+    const headerContentOverlaysParent = document.getElementById("DESKTOP-HEADER_OVERLAYS-parent");
     const headerContentCarcass = document.getElementById("DESKTOP-HEADER_CONTENT-carcass");
     const headerOverlaysTriggers = [
         "projects",
@@ -115,9 +116,13 @@ function headerOverlaysInteractions() {
                         }
                     }
 
+                    if (!headerContentOverlaysParent) return;
+                    headerContentOverlaysParent.style.pointerEvents = 'none';
                     headerOverlay.style.opacity = '0';
-                    headerOverlay.style.zIndex = '10';
+                    headerOverlay.style.pointerEvents = 'none';
+                    headerOverlay.style.zIndex = '100';
                     blankOverlay.style.opacity = '0';
+                    blankOverlay.style.pointerEvents = 'none';
                 });
                 activeOverlay = null;
                 textClickElsewhereAnimationIsServed = false;
@@ -129,14 +134,20 @@ function headerOverlaysInteractions() {
 
     headerOverlays.forEach(headerOverlay => {
         if (headerOverlay) {
+            if (!headerContentOverlaysParent) return;
+            headerContentOverlaysParent.style.pointerEvents = 'none';
             headerOverlay.style.opacity = '0';
+            headerOverlay.style.pointerEvents = 'none';
             headerOverlay.classList.remove('DEV-DISABLE_VISIBILITY');
         }
     });
 
     if (!blankOverlay) return;
 
+    if (!headerContentOverlaysParent) return;
+    headerContentOverlaysParent.style.pointerEvents = 'none';
     blankOverlay.style.opacity = '0';
+    blankOverlay.style.pointerEvents = 'none';
     blankOverlay.classList.remove('DEV-DISABLE_VISIBILITY');
 
 
@@ -260,9 +271,13 @@ function headerOverlaysInteractions() {
 
                 //  CLOSE SAME OVERLAY THAT WAS ACTIVE
                 if (activeOverlay === triggeredOverlay && triggeredOverlay.style.opacity === '1') {
+                    if (!headerContentOverlaysParent) return;
+                    headerContentOverlaysParent.style.pointerEvents = 'none';
                     triggeredOverlay.style.opacity = '0';
-                    triggeredOverlay.style.zIndex = '10';
+                    triggeredOverlay.style.pointerEvents = 'none';
+                    triggeredOverlay.style.zIndex = '100';
                     blankOverlay.style.opacity = '0';
+                    blankOverlay.style.pointerEvents = 'none';
                     activeOverlay = null;
 
                     document.removeEventListener('click', resetOutsideClickListener);
@@ -275,16 +290,24 @@ function headerOverlaysInteractions() {
                     if (!headerOverlay) return;
 
                     if (headerOverlay !== triggeredOverlay) {
+                        if (!headerContentOverlaysParent) return;
+                        headerContentOverlaysParent.style.pointerEvents = 'none';
                         headerOverlay.style.opacity = '0';
-                        headerOverlay.style.zIndex = '10';
+                        headerOverlay.style.pointerEvents = 'none';
+                        headerOverlay.style.zIndex = '100';
                         blankOverlay.style.opacity = '0';
+                        blankOverlay.style.pointerEvents = 'none';
                     }
                 });
 
                 //  OPEN TRIGGERED OVERLAY
+                if (!headerContentOverlaysParent) return;
+                headerContentOverlaysParent.style.pointerEvents = 'unset';
                 triggeredOverlay.style.opacity = '1';
-                triggeredOverlay.style.zIndex = '11';
+                triggeredOverlay.style.pointerEvents = 'unset';
+                triggeredOverlay.style.zIndex = '101';
                 blankOverlay.style.opacity = '1';
+                blankOverlay.style.pointerEvents = 'unset';
                 activeOverlay = triggeredOverlay;
 
                 setTimeout(() => {

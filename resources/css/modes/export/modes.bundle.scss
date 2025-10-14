@@ -3,6 +3,8 @@ $MEDIA_ENDPOINTS-DESKTOP_MAIN: 100/60;
 $MEDIA_ENDPOINTS-DESKTOP_SLIM: 100/95;
 $MEDIA_ENDPOINTS-MOBILE_SPACIOUS: 100/140;
 
+$MEDIA_ENDPOINTS-LANDSCAPE: $MEDIA_ENDPOINTS-DESKTOP_MAIN;
+
 //  MODE: DESKTOP MAIN
 @media screen and (min-aspect-ratio: $MEDIA_ENDPOINTS-DESKTOP_MAIN){
     @import '../bundling/desktop.bundle';
@@ -13,6 +15,18 @@ $MEDIA_ENDPOINTS-MOBILE_SPACIOUS: 100/140;
 @media screen and (max-aspect-ratio: $MEDIA_ENDPOINTS-DESKTOP_MAIN) and (min-aspect-ratio: $MEDIA_ENDPOINTS-DESKTOP_SLIM) {
     @import '../bundling/desktop.bundle';
     @include DESKTOP_MODES(SLIM);
+}
+
+//  MODE: LANDSCAPE MAIN
+@media screen and (min-aspect-ratio: $MEDIA_ENDPOINTS-LANDSCAPE) and (hover: none) and (pointer: coarse) {
+    @import '../bundling/landscape.bundle';
+    @include LANDSCAPE_MODES(MAIN);
+}
+
+//  MODE: LANDSCAPE SLIM
+@media screen and (max-aspect-ratio: $MEDIA_ENDPOINTS-LANDSCAPE) and (hover: none) and (pointer: coarse) {
+    @import '../bundling/landscape.bundle';
+    @include LANDSCAPE_MODES(SLIM);
 }
 
 //  MODE: MOBILE SPACIOUS
@@ -35,3 +49,5 @@ $MEDIA_ENDPOINTS-MOBILE_SPACIOUS: 100/140;
 //  Between 2 and 3 = DESKTOP SLIM
 //  Between 1 and 2 = MOBILE SPACIOUS
 //  Before 1 = MOBILE MAIN
+//
+//  *LANDSCAPES exist independently

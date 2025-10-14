@@ -1,17 +1,17 @@
-@mixin MOBILE_MODES($MODE) {
-    $MODE_VALUES: map-get($MOBILE_MODES, $MODE);
+@mixin LANDSCAPE_MODES($MODE) {
+    $MODE_VALUES: map-get($LANDSCAPE_MODES, $MODE);
 
 
 
-    //  CHUNK:MOBILE
+    //  CHUNK:LANDSCAPE
     .S-DESKTOP-wrapper {
         display: none;
     }
     .S-LANDSCAPE-wrapper {
-        display: none;
+        display: unset;
     }
     .S-MOBILE-wrapper {
-        display: unset;
+        display: none;
     }
 
 
