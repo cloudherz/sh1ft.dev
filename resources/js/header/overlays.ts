@@ -11,7 +11,6 @@ function headerOverlaysInteractions() {
         document.getElementById("DESKTOP-HEADER_OVERLAY-other"),
         document.getElementById("DESKTOP-HEADER_OVERLAY-languages")
     ];
-    const blankOverlay = document.getElementById("DESKTOP-HEADER_OVERLAY-blank");
 
     let activeOverlay: HTMLElement | null = null;
 
@@ -87,18 +86,17 @@ function headerOverlaysInteractions() {
         }
 
         if (activeOverlay) {
-            const clickedInsideHeader = target.id.startsWith("DESKTOP-HEADER_OVERLAY_TRIGGER-") || target.id.startsWith("DESKTOP-HEADER_OVERLAY_BLANK_TRIGGER-");
+            const clickedInsideHeader = target.id.startsWith("DESKTOP-HEADER_OVERLAY_TRIGGER-");
             const clickedInsideActiveOverlay = activeOverlay.contains(target);
-            const isBlankTrigger = target.id.startsWith("DESKTOP-HEADER_OVERLAY_BLANK_TRIGGER-");
 
             let textClickElsewhereAnimationIsServed: boolean = false;
 
-            //  CLOSE OVERLAY IF HIT OUTSIDE OF ACTIVE OVERLAY AND BLANK TRIGGERS
-            if (!clickedInsideHeader && !clickedInsideActiveOverlay || isBlankTrigger) {
+            //  CLOSE OVERLAY IF HIT OUTSIDE OF ACTIVE OVERLAY
+            if (!clickedInsideHeader && !clickedInsideActiveOverlay) {
                 document.removeEventListener('click', resetOutsideClickListener);
 
                 headerOverlays.forEach(headerOverlay => {
-                    if (!headerOverlay || !activeOverlay || !blankOverlay) return;
+                    if (!headerOverlay || !activeOverlay) return;
 
                     if (!textClickElsewhereAnimationIsServed) {
                         //  ANIMATE DROPDOWN BUTTON ON HOVER
@@ -121,8 +119,6 @@ function headerOverlaysInteractions() {
                     headerOverlay.style.opacity = '0';
                     headerOverlay.style.pointerEvents = 'none';
                     headerOverlay.style.zIndex = '100';
-                    blankOverlay.style.opacity = '0';
-                    blankOverlay.style.pointerEvents = 'none';
                 });
                 activeOverlay = null;
                 textClickElsewhereAnimationIsServed = false;
@@ -142,13 +138,11 @@ function headerOverlaysInteractions() {
         }
     });
 
-    if (!blankOverlay) return;
+
 
     if (!headerContentOverlaysParent) return;
     headerContentOverlaysParent.style.pointerEvents = 'none';
-    blankOverlay.style.opacity = '0';
-    blankOverlay.style.pointerEvents = 'none';
-    blankOverlay.classList.remove('DEV-DISABLE_VISIBILITY');
+
 
 
 
@@ -252,9 +246,6 @@ function headerOverlaysInteractions() {
         if (targetId && targetId.startsWith("DESKTOP-HEADER_OVERLAY_TRIGGER-")) {
             const parts = targetId.split("-");
             let trigger = parts[2];
-            if (trigger === "blank") {
-                trigger = "languages";
-            }
             const triggeredOverlay = document.getElementById("DESKTOP-HEADER_OVERLAY-" + trigger);
 
             if (!trigger) return;
@@ -276,8 +267,6 @@ function headerOverlaysInteractions() {
                     triggeredOverlay.style.opacity = '0';
                     triggeredOverlay.style.pointerEvents = 'none';
                     triggeredOverlay.style.zIndex = '100';
-                    blankOverlay.style.opacity = '0';
-                    blankOverlay.style.pointerEvents = 'none';
                     activeOverlay = null;
 
                     document.removeEventListener('click', resetOutsideClickListener);
@@ -295,8 +284,6 @@ function headerOverlaysInteractions() {
                         headerOverlay.style.opacity = '0';
                         headerOverlay.style.pointerEvents = 'none';
                         headerOverlay.style.zIndex = '100';
-                        blankOverlay.style.opacity = '0';
-                        blankOverlay.style.pointerEvents = 'none';
                     }
                 });
 
@@ -306,8 +293,6 @@ function headerOverlaysInteractions() {
                 triggeredOverlay.style.opacity = '1';
                 triggeredOverlay.style.pointerEvents = 'unset';
                 triggeredOverlay.style.zIndex = '101';
-                blankOverlay.style.opacity = '1';
-                blankOverlay.style.pointerEvents = 'unset';
                 activeOverlay = triggeredOverlay;
 
                 setTimeout(() => {

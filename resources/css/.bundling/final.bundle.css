@@ -160,16 +160,16 @@ body {
     width: 100vw;
   }
   .S-DESKTOP-carcass .S-DESKTOP-header {
-    background-color: #0E0E0E;
     position: fixed;
     width: 100vw;
-    border-bottom: 0.4vh solid #414141;
-    transition: opacity 0.2s;
     z-index: 100;
   }
   .S-HEADER-wrapper {
+    background-color: #0E0E0E;
     display: flex;
     justify-content: center;
+    border-bottom: 0.4vh solid #414141;
+    transition: opacity 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass {
     display: grid;
@@ -178,16 +178,9 @@ body {
     grid-column-gap: 0;
     grid-row-gap: 0;
     height: 7.5vh;
-    width: 100%;
-    max-width: 150vh;
-    margin: 0 20vh;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo {
     grid-area: 1/1/2/2;
-    display: flex;
-    justify-content: flex-start;
-    border-left: 0.4vh solid #414141;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass {
     display: flex;
@@ -195,19 +188,24 @@ body {
     justify-content: center;
     height: 7.5vh;
     padding: 0 3vh;
+    background-color: #0E0E0E;
+    color: #B6B6B6;
+    transition: background-color 0.15s, color 0.2s;
+    cursor: pointer;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image_responsive_main {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image {
     height: 3.488372093vh;
-    display: unset;
+    transition: filter 0.2s;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image_responsive_slim {
-    height: 3.488372093vh;
-    display: none;
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover {
+    background-color: #1C1C1C;
+    color: #ffffff;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover .I-LOGO-image {
+    filter: brightness(141%);
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content {
     grid-area: 1/2/2/3;
-    display: flex;
-    justify-content: flex-end;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass {
     display: grid;
@@ -255,29 +253,18 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-projects {
     grid-area: 1/1/2/2;
-    border-left: 0.4vh solid #414141;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-about {
     grid-area: 1/2/2/3;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-contacts {
     grid-area: 1/3/2/4;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-other {
     grid-area: 1/4/2/5;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-blank {
-    grid-area: 1/5/2/6;
-    width: 0;
-    border-right: 0.4vh solid #414141;
-    background-color: #414141;
-  }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages {
-    grid-area: 1/6/2/7;
-    border-right: 0.4vh solid #414141;
+    grid-area: 1/5/2/6;
     width: 7.5vh;
     display: flex;
     justify-content: center;
@@ -339,24 +326,25 @@ body {
     filter: brightness(141%);
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays {
-    grid-area: 2/1/3/7;
+    grid-area: 2/1/3/6;
     z-index: 110;
     pointer-events: none;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass {
     display: grid;
-    grid-template-columns: 1fr 0.4vh max-content;
+    grid-template-columns: 1fr max-content;
     grid-template-rows: 1fr;
     grid-column-gap: 0;
     grid-row-gap: 0;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-all {
     transition: opacity 0.2s;
-    border-top: 0.4vh solid #414141;
-    border-bottom: 0.4vh solid #414141;
+    box-sizing: border-box;
+    border: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-big {
     border-left: 0.4vh solid #414141;
+    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-projects {
     background-color: #63a7ae;
@@ -366,16 +354,10 @@ body {
     background-color: #816ee1;
     grid-area: 1/1/2/2;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-blank {
-    grid-area: 1/2/2/3;
-    width: 0.4vh;
-    background-color: #414141;
-  }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-languages {
     background-color: #0b4e51;
-    grid-area: 1/3/2/4;
+    grid-area: 1/2/2/3;
     width: 7.5vh;
-    border-right: 0.4vh solid #414141;
   }
   .S-FRONT-carcass {
     display: grid;
@@ -460,16 +442,16 @@ body {
     width: 100vw;
   }
   .S-DESKTOP-carcass .S-DESKTOP-header {
-    background-color: #0E0E0E;
     position: fixed;
     width: 100vw;
-    border-bottom: 0.4vh solid #414141;
-    transition: opacity 0.2s;
     z-index: 100;
   }
   .S-HEADER-wrapper {
+    background-color: #0E0E0E;
     display: flex;
     justify-content: center;
+    border-bottom: 0.4vh solid #414141;
+    transition: opacity 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass {
     display: grid;
@@ -478,16 +460,9 @@ body {
     grid-column-gap: 0;
     grid-row-gap: 0;
     height: 7.5vh;
-    width: 100%;
-    max-width: unset;
-    margin: 0;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo {
     grid-area: 1/1/2/2;
-    display: flex;
-    justify-content: flex-start;
-    border-left: 0.4vh solid #414141;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass {
     display: flex;
@@ -495,19 +470,24 @@ body {
     justify-content: center;
     height: 7.5vh;
     padding: 0 3vh;
+    background-color: #0E0E0E;
+    color: #B6B6B6;
+    transition: background-color 0.15s, color 0.2s;
+    cursor: pointer;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image_responsive_main {
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image {
     height: 3.488372093vh;
-    display: none;
+    transition: filter 0.2s;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image_responsive_slim {
-    height: 3.488372093vh;
-    display: unset;
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover {
+    background-color: #1C1C1C;
+    color: #ffffff;
+  }
+  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover .I-LOGO-image {
+    filter: brightness(141%);
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content {
     grid-area: 1/2/2/3;
-    display: flex;
-    justify-content: flex-end;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass {
     display: grid;
@@ -555,29 +535,18 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-projects {
     grid-area: 1/1/2/2;
-    border-left: 0.4vh solid #414141;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-about {
     grid-area: 1/2/2/3;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-contacts {
     grid-area: 1/3/2/4;
-    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-other {
     grid-area: 1/4/2/5;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-blank {
-    grid-area: 1/5/2/6;
-    width: 0;
-    border-right: 0.4vh solid #414141;
-    background-color: #414141;
-  }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages {
-    grid-area: 1/6/2/7;
-    border-right: 0.4vh solid #414141;
+    grid-area: 1/5/2/6;
     width: 7.5vh;
     display: flex;
     justify-content: center;
@@ -639,24 +608,25 @@ body {
     filter: brightness(141%);
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays {
-    grid-area: 2/1/3/7;
+    grid-area: 2/1/3/6;
     z-index: 110;
     pointer-events: none;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass {
     display: grid;
-    grid-template-columns: 1fr 0.4vh max-content;
+    grid-template-columns: 1fr max-content;
     grid-template-rows: 1fr;
     grid-column-gap: 0;
     grid-row-gap: 0;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-all {
     transition: opacity 0.2s;
-    border-top: 0.4vh solid #414141;
-    border-bottom: 0.4vh solid #414141;
+    box-sizing: border-box;
+    border: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-big {
     border-left: 0.4vh solid #414141;
+    border-right: 0.4vh solid #414141;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-projects {
     background-color: #63a7ae;
@@ -666,16 +636,10 @@ body {
     background-color: #816ee1;
     grid-area: 1/1/2/2;
   }
-  .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-blank {
-    grid-area: 1/2/2/3;
-    width: 0.4vh;
-    background-color: #414141;
-  }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays .S-OVERLAYS-carcass .S-OVERLAY-languages {
     background-color: #0b4e51;
-    grid-area: 1/3/2/4;
+    grid-area: 1/2/2/3;
     width: 7.5vh;
-    border-right: 0.4vh solid #414141;
   }
   .S-FRONT-carcass {
     display: grid;

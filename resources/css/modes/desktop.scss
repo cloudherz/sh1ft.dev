@@ -27,16 +27,10 @@
         width: 100vw;
 
         .S-DESKTOP-header {
-            //  BACKGROUND
-            background-color: $PALETTE-OBSIDIAN;
             //  POSITIONING
             position: fixed;
             //  SCALING
             width: 100vw;
-            //  BORDER
-            border-bottom: $LV-D-BORDERS;
-            //  TRANSITION
-            transition: opacity 0.2s;
             //  LAYERING
             z-index: 100;
         }
@@ -47,12 +41,16 @@
     //  CHUNK:HEADER
     //  LOCAL VARIABLES NAME = HEADER
     $LV-D-HEADER-HEIGHT: 7.5vh;
-    $LV-D-HEADER-LOGO_TOGGLE_MAIN: map-get($MODE_VALUES, LV-D-HEADER-LOGO_TOGGLE_MAIN);
-    $LV-D-HEADER-LOGO_TOGGLE_SLIM: map-get($MODE_VALUES, LV-D-HEADER-LOGO_TOGGLE_SLIM);
     .S-HEADER-wrapper {
+        //  BACKGROUND
+        background-color: $PALETTE-OBSIDIAN;
         //  FLEXBOX
         display: flex;
         justify-content: center;
+        //  BORDER
+        border-bottom: $LV-D-BORDERS;
+        //  TRANSITION
+        transition: opacity 0.2s;
 
         .S-HEADER-carcass {
             //  CSS-GRID SETUP
@@ -63,20 +61,10 @@
             grid-row-gap: 0;
             //  SCALING
             height: $LV-D-HEADER-HEIGHT;
-            width: 100%;
-            max-width: $LV-D-CORE-RESPONSIVE_HORIZONTAL_MARGINS-MAX_WIDTH_VALUE;
-            //  MARGINS & PADDINGS
-            margin: $LV-D-CORE-RESPONSIVE_HORIZONTAL_MARGINS-MARGIN_VALUE;
 
             .S-HEADER-logo {
                 //  CSS-GRID CONFIGURATION
                 grid-area: 1 / 1 / 2 / 2;
-                //  FLEXBOX
-                display: flex;
-                justify-content: flex-start;
-                //  BORDER
-                border-left: $LV-D-BORDERS;
-                border-right: $LV-D-BORDERS;
 
                 .S-LOGO-carcass {
                     //  FLEXBOX
@@ -87,27 +75,39 @@
                     height: $LV-D-HEADER-HEIGHT;
                     //  MARGINS & PADDINGS
                     padding: 0 $GV-D-DISTANCE-MEDIUM;
+                    //  BACKGROUND
+                    background-color: $PALETTE-OBSIDIAN;
+                    //  FONT SETTINGS
+                    color: $PALETTE-ASH;
+                    //  TRANSITION
+                    transition:
+                        background-color 0.15s,
+                        color 0.2s;
+                    //  CURSOR
+                    cursor: pointer;
 
-                    .I-LOGO-image_responsive_main {
+                    .I-LOGO-image {
                         //  SCALING
                         height: $LV-D-HEADER-HEIGHT / 2.15;
-                        //  DISPLAY
-                        display: $LV-D-HEADER-LOGO_TOGGLE_MAIN;
+                        //  TRANSITION
+                        transition: filter 0.2s;
                     }
-                    .I-LOGO-image_responsive_slim {
-                        //  SCALING
-                        height: $LV-D-HEADER-HEIGHT / 2.15;
-                        //  DISPLAY
-                        display: $LV-D-HEADER-LOGO_TOGGLE_SLIM;
+                }
+                .S-LOGO-carcass:hover {
+                    //  BACKGROUND
+                    background-color: $PALETTE-MIDNIGHT;
+                    //  FONT SETTINGS
+                    color: $PALETTE-SNOW;
+
+                    .I-LOGO-image {
+                        //  FILTER
+                        filter: brightness(141%);
                     }
                 }
             }
             .S-HEADER-content {
                 //  CSS-GRID CONFIGURATION
                 grid-area: 1 / 2 / 2 / 3;
-                //  FLEXBOX
-                display: flex;
-                justify-content: flex-end;
 
                 .S-CONTENT-carcass {
                     //  CSS-GRID SETUP
@@ -171,41 +171,22 @@
                     .S-CONTENT-projects {
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 1 / 2 / 2;
-                        //  BORDER
-                        border-left: $LV-D-BORDERS;
-                        border-right: $LV-D-BORDERS;
                     }
                     .S-CONTENT-about {
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 2 / 2 / 3;
-                        //  BORDER
-                        border-right: $LV-D-BORDERS;
                     }
                     .S-CONTENT-contacts {
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 3 / 2 / 4;
-                        //  BORDER
-                        border-right: $LV-D-BORDERS;
                     }
                     .S-CONTENT-other {
                         //  CSS-GRID CONFIGURATION
                         grid-area: 1 / 4 / 2 / 5;
                     }
-                    .S-CONTENT-blank {
-                        //  CSS-GRID CONFIGURATION
-                        grid-area: 1 / 5 / 2 / 6;
-                        //  SCALING
-                        width: 0;
-                        //  BORDER
-                        border-right: $LV-D-BORDERS;
-                        //  BACKGROUND
-                        background-color: $PALETTE-SLATE;
-                    }
                     .S-CONTENT-languages {
                         //  CSS-GRID CONFIGURATION
-                        grid-area: 1 / 6 / 2 / 7;
-                        //  BORDER
-                        border-right: $LV-D-BORDERS;
+                        grid-area: 1 / 5 / 2 / 6;
                         //  SCALING
                         width: $LV-D-HEADER-HEIGHT;
                         //  FLEXBOX
@@ -278,7 +259,7 @@
                     }
                     .S-CONTENT-overlays {
                         //  CSS-GRID CONFIGURATION
-                        grid-area: 2 / 1 / 3 / 7;
+                        grid-area: 2 / 1 / 3 / 6;
                         //  LAYERING
                         z-index: 110;
                         //  INTERACTIONS
@@ -287,7 +268,7 @@
                         .S-OVERLAYS-carcass {
                             //  CSS-GRID SETUP
                             display: grid;
-                            grid-template-columns: 1fr $GV-D-BORDER_WIDTH max-content;
+                            grid-template-columns: 1fr max-content;
                             grid-template-rows: 1fr;
                             grid-column-gap: 0;
                             grid-row-gap: 0;
@@ -295,13 +276,13 @@
                             .S-OVERLAY-all {
                                 //  TRANSITION
                                 transition: opacity 0.2s;
-                                //  BORDER
-                                border-top: $LV-D-BORDERS;
-                                border-bottom: $LV-D-BORDERS;
+                                box-sizing: border-box;
+                                border: $LV-D-BORDERS;
                             }
                             .S-OVERLAY-big {
                                 //  BORDER
                                 border-left: $LV-D-BORDERS;
+                                border-right: $LV-D-BORDERS;
                             }
                             .S-OVERLAY-projects {
                                 background-color: #63a7ae;
@@ -313,22 +294,12 @@
                                 //  CSS-GRID CONFIGURATION
                                 grid-area: 1 / 1 / 2 / 2;
                             }
-                            .S-OVERLAY-blank {
-                                //  CSS-GRID CONFIGURATION
-                                grid-area: 1 / 2 / 2 / 3;
-                                //  SCALING
-                                width: $GV-D-BORDER_WIDTH;
-                                //  BACKGROUND
-                                background-color: $PALETTE-SLATE;
-                            }
                             .S-OVERLAY-languages {
                                 background-color: #0b4e51;
                                 //  CSS-GRID CONFIGURATION
-                                grid-area: 1 / 3 / 2 / 4;
+                                grid-area: 1 / 2 / 2 / 3;
                                 //  SCALING
                                 width: $LV-D-HEADER-HEIGHT;
-                                //  BORDER
-                                border-right: $LV-D-BORDERS;
                             }
                         }
                     }

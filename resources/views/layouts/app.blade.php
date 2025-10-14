@@ -43,13 +43,12 @@
     <div class="S-DESKTOP-wrapper">
         <div class="S-DESKTOP-carcass">
             <header class="S-DESKTOP-header" id="DESKTOP-header">
-                <div class="S-HEADER-wrapper DEV-DISABLE_SELECTION">
+                <div class="S-HEADER-wrapper DEV-DISABLE_SELECTION" id="DESKTOP-header-wrapper">
                     <div class="S-HEADER-carcass">
                         <div class="S-HEADER-logo">
                             <div class="S-LOGO-wrapper">
                                 <div class="S-LOGO-carcass">
-                                    <img class="I-LOGO-image_responsive_main" title="sh1ft logo" alt="sh1ft_logo" src="images/sh1ft/vertical_logo.svg" draggable="false">
-                                    <img class="I-LOGO-image_responsive_slim" title="sh1ft logo" alt="sh1ft_logo" src="images/sh1ft/main_logo.svg" draggable="false">
+                                    <img class="I-LOGO-image" title="sh1ft logo" alt="sh1ft_logo" src="images/sh1ft/main_logo_gray.svg" draggable="false">
                                 </div>
                             </div>
                         </div>
@@ -70,9 +69,6 @@
                                         <p class="T-CONTENT-text TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-NORMAL TYPO-VARIABLE">прочее</p>
                                         <img class="I-CONTENT-dropdown_arrow" id="DESKTOP-HEADER_DROPDOWN_ARROW-other" alt="dropdown_arrow" src="images/icons/chevron_arrow_gray.svg" draggable="false">
                                     </div>
-                                    <div class="S-CONTENT-blank" id="DESKTOP-HEADER_OVERLAY_TRIGGER-blank">
-
-                                    </div>
                                     <div class="S-CONTENT-languages" id="DESKTOP-HEADER_OVERLAY_TRIGGER-languages">
                                         {{-- <img class="I-CONTENT-languages_combined I-CONTENT-languages_all DEV-DISABLE_VISIBILITY" alt="language_select" src="images/icons/language_gray.svg" draggable="false"> --}}
                                         <img class="I-CONTENT-languages_part1 I-CONTENT-languages_all" id="DESKTOP-HEADER_DROPDOWN_LANGUAGES_ICON-part1" alt="language_select" src="images/icons/language_gray_part1.svg" draggable="false">
@@ -86,9 +82,6 @@
                                                 </div>
                                                 <div class="S-OVERLAY-other S-OVERLAY-all S-OVERLAY-big DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-other">
                                                     other
-                                                </div>
-                                                <div class="S-OVERLAY-blank S-OVERLAY-all DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-blank">
-
                                                 </div>
                                                 <div class="S-OVERLAY-languages S-OVERLAY-all DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-languages">
                                                     ln

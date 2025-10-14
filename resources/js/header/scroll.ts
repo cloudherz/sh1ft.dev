@@ -1,9 +1,9 @@
 function toggleHeaderOnScroll() {
-    const header = document.getElementById("DESKTOP-header");
+    const headerWrapper = document.getElementById("DESKTOP-header-wrapper");
 
-    if (header) {
-        // header.style.opacity = window.scrollY > 0 ? '0' : '1';
-        header.style.opacity = '1';
+    if (headerWrapper) {
+        // headerWrapper.style.opacity = window.scrollY > 0 ? '0' : '1';
+        headerWrapper.style.opacity = '1';
     } else {
         return;
     }
@@ -41,9 +41,11 @@ function toggleHeaderOnScroll() {
 
             if (direction) {
                 if (direction === 'down') {
-                    header.style.opacity = '0';
+                    headerWrapper.style.opacity = '0';
+                    headerWrapper.style.pointerEvents = 'none';
                 } else if (direction === 'up') {
-                    header.style.opacity = '1';
+                    headerWrapper.style.opacity = '1';
+                    headerWrapper.style.pointerEvents = 'unset';
                 }
             }
 
