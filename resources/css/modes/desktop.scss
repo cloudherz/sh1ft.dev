@@ -372,44 +372,156 @@
                 justify-content: center;
 
                 .S-CONTENT-carcass {
-                    //  CSS-GRID SETUP
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: 1fr;
-                    grid-column-gap: 0;
-                    grid-row-gap: 0;
+                    //  FLEXBOX
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
                     //  SCALING
                     height: 100vh - $LV-D-HEADER-HEIGHT - $GV-D-BORDER_WIDTH;
                     //  MARGINS & PADDINGS
                     padding-top: $LV-D-HEADER-HEIGHT + $GV-D-BORDER_WIDTH;
 
-                    .S-CONTENT-main {
-                        //  CSS-GRID CONFIGURATION
-                        grid-area: 1 / 1 / 2 / 2;
-                        //  FLEXBOX
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        flex-direction: column;
+                    .S-CONTENT-name {
+                        //  MARGINS & PADDINGS
+                        margin-bottom: $GV-D-DISTANCE-BIG * 2;
 
-                        .T-CONTENT-text {
+                        .T-NAME-text {
                             //  FONT SETTINGS
                             color: $PALETTE-SNOW;
                             text-align: center;
                         }
                     }
-                    .S-CONTENT-bottom {
-                        //  CSS-GRID CONFIGURATION
-                        grid-area: 1 / 1 / 2 / 2;
+                    .S-CONTENT-buttons {
+                        //  FLEXBOX
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        gap: $GV-D-DISTANCE-SMALL;
+                        //  SCALING
+                        width: 90vh;
+
+                        .S-BUTTON-frame {
+                            //  FLEXBOX
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            //  BACKGROUND
+                            background-color: $PALETTE-SNOW;
+                            //  MARGINS & PADDINGS
+                            padding: $GV-D-DISTANCE-MICRO $GV-D-DISTANCE-SMALL;
+                            //  STREAMLINING
+                            border-radius: $GV-D-BORDER_RADIUS-SMALL;
+                            //  SCALING
+                            width: max-content;
+                            //  TRANSITION
+                            transition: background-color 0.2s;
+
+                            &:hover {
+                                //  BACKGROUND
+                                background-color: $PALETTE-SH1FT;
+
+                                .T-BUTTON-title {
+                                    //  FONT SETTINGS
+                                    color: $PALETTE-SNOW;
+                                }
+
+                                .I-BUTTON-arrow {
+                                    //  FILL
+                                    fill: $PALETTE-SNOW;
+                                }
+                            }
+
+                            .T-BUTTON-title {
+                                //  FONT SETTINGS
+                                color: $PALETTE-OBSIDIAN;
+                                text-align: center;
+                                //  TRANSITION
+                                transition:
+                                    color 0.2s,
+                                    transform 0.2s;
+                            }
+                            .I-BUTTON-arrow {
+                                //  SCALING
+                                height: 1.9vh;
+                                //  MARGINS & PADDINGS
+                                margin-left: $GV-D-DISTANCE-MICRO;
+                                //  FILL
+                                fill: $PALETTE-OBSIDIAN;
+                                //  TRANSITION
+                                transition: fill 0.2s;
+                            }
+                        }
+
+                        .L-BUTTON-link {
+                            //  LINK SETTINGS
+                            text-decoration: none;
+                        }
+                    }
+                    .S-CONTENT-shortcuts {
                         //  FLEXBOX
                         display: flex;
                         align-items: center;
-                        justify-content: flex-end;
-                        flex-direction: column;
+                        flex-direction: row;
+                        //  MARGINS & PADDINGS
+                        margin-top: $GV-D-DISTANCE-MEDIUM;
 
-                        .T-CONTENT-text {
+                        & > .L-SHORTCUT-icon:nth-child(2) {
+                            //  MARGINS & PADDINGS
+                            margin-right: $GV-D-DISTANCE-REGULAR;
+                        }
+
+                        .L-SHORTCUT-link {
+                            //  LINK SETTINGS
+                            text-decoration: underline;
+                            text-underline-offset: 0.4vh;
+                            text-decoration-thickness: 0.25vh;
                             //  FONT SETTINGS
-                            color: $PALETTE-ASH;
+                            color: $PALETTE-SNOW;
+                            //  MARGINS & PADDINGS
+                            margin-right: $GV-D-DISTANCE-REGULAR;
+                            //  TRANSITION
+                            transition:
+                                color 0.2s,
+                                text-underline-offset 0.15s;
+
+                            &:hover {
+                                //  LINK SETTINGS
+                                text-underline-offset: 0.7vh;
+                                //  FONT SETTINGS
+                                color: $PALETTE-SH1FT;
+                            }
+                        }
+                        .L-SHORTCUT-icon {
+                            //  LINK SETTINGS
+                            text-decoration: underline;
+                            //  FLEXBOX
+                            display: flex;
+
+                            .I-SHORTCUT-all {
+                                path {
+                                    //  FILL
+                                    fill: $PALETTE-SNOW;
+                                    //  TRANSITION
+                                    transition: fill 0.2s;
+                                }
+
+                                &:hover {
+                                    path {
+                                        //  FILL
+                                        fill: $PALETTE-SH1FT;
+                                    }
+                                }
+                            }
+                            .I-SHORTCUT-icon_telegram {
+                                //  SCALING
+                                height: 2.8vh;
+                            }
+                            .I-SHORTCUT-icon_email {
+                                //  SCALING
+                                height: 2.3vh;
+                            }
                         }
                     }
                 }

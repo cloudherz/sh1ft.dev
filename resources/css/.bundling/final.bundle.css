@@ -227,7 +227,7 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow {
     height: 1.2vh;
-    margin-left: 1.1278195489vh;
+    margin-left: 1.1252813203vh;
     transition: transform 0.2s ease-in-out, filter 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow_animation {
@@ -394,34 +394,98 @@ body {
     justify-content: center;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0;
-    grid-row-gap: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     height: 92.1vh;
     padding-top: 7.9vh;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-main {
-    grid-area: 1/1/2/2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-name {
+    margin-bottom: 8.25vh;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-main .T-CONTENT-text {
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-name .T-NAME-text {
     color: #ffffff;
     text-align: center;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-bottom {
-    grid-area: 1/1/2/2;
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.875vh;
+    width: 90vh;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.1252813203vh 1.875vh;
+    border-radius: 1.15vh;
+    width: max-content;
+    transition: background-color 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame:hover {
+    background-color: #5842FF;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame:hover .T-BUTTON-title {
+    color: #ffffff;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame:hover .I-BUTTON-arrow {
+    fill: #ffffff;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame .T-BUTTON-title {
+    color: #0E0E0E;
+    text-align: center;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame .I-BUTTON-arrow {
+    height: 1.9vh;
+    margin-left: 1.1252813203vh;
+    fill: #0E0E0E;
+    transition: fill 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .L-BUTTON-link {
+    text-decoration: none;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex-direction: column;
+    flex-direction: row;
+    margin-top: 3vh;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-bottom .T-CONTENT-text {
-    color: #B6B6B6;
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts > .L-SHORTCUT-icon:nth-child(2) {
+    margin-right: 2.2505626407vh;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link {
+    text-decoration: underline;
+    text-underline-offset: 0.4vh;
+    text-decoration-thickness: 0.25vh;
+    color: #ffffff;
+    margin-right: 2.2505626407vh;
+    transition: color 0.2s, text-underline-offset 0.15s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link:hover {
+    text-underline-offset: 0.7vh;
+    color: #5842FF;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon {
+    text-decoration: underline;
+    display: flex;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-all path {
+    fill: #ffffff;
+    transition: fill 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-all:hover path {
+    fill: #5842FF;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-icon_telegram {
+    height: 2.8vh;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-icon_email {
+    height: 2.3vh;
   }
   .S-SHOWCASE-carcass {
     height: 100vh;
@@ -509,7 +573,7 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow {
     height: 1.2vh;
-    margin-left: 1.1278195489vh;
+    margin-left: 1.1252813203vh;
     transition: transform 0.2s ease-in-out, filter 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow_animation {
@@ -676,34 +740,98 @@ body {
     justify-content: center;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0;
-    grid-row-gap: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     height: 92.1vh;
     padding-top: 7.9vh;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-main {
-    grid-area: 1/1/2/2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-name {
+    margin-bottom: 8.25vh;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-main .T-CONTENT-text {
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-name .T-NAME-text {
     color: #ffffff;
     text-align: center;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-bottom {
-    grid-area: 1/1/2/2;
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.875vh;
+    width: 90vh;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 1.1252813203vh 1.875vh;
+    border-radius: 1.15vh;
+    width: max-content;
+    transition: background-color 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame:hover {
+    background-color: #5842FF;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame:hover .T-BUTTON-title {
+    color: #ffffff;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame:hover .I-BUTTON-arrow {
+    fill: #ffffff;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame .T-BUTTON-title {
+    color: #0E0E0E;
+    text-align: center;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .S-BUTTON-frame .I-BUTTON-arrow {
+    height: 1.9vh;
+    margin-left: 1.1252813203vh;
+    fill: #0E0E0E;
+    transition: fill 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-buttons .L-BUTTON-link {
+    text-decoration: none;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    flex-direction: column;
+    flex-direction: row;
+    margin-top: 3vh;
   }
-  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-bottom .T-CONTENT-text {
-    color: #B6B6B6;
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts > .L-SHORTCUT-icon:nth-child(2) {
+    margin-right: 2.2505626407vh;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link {
+    text-decoration: underline;
+    text-underline-offset: 0.4vh;
+    text-decoration-thickness: 0.25vh;
+    color: #ffffff;
+    margin-right: 2.2505626407vh;
+    transition: color 0.2s, text-underline-offset 0.15s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link:hover {
+    text-underline-offset: 0.7vh;
+    color: #5842FF;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon {
+    text-decoration: underline;
+    display: flex;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-all path {
+    fill: #ffffff;
+    transition: fill 0.2s;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-all:hover path {
+    fill: #5842FF;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-icon_telegram {
+    height: 2.8vh;
+  }
+  .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon .I-SHORTCUT-icon_email {
+    height: 2.3vh;
   }
   .S-SHOWCASE-carcass {
     height: 100vh;
