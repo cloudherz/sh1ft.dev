@@ -534,7 +534,236 @@
     //  CHUNK:HOME-SHOWCASE
     //  LOCAL VARIABLES NAME = HOME-SHOWCASE
     .S-SHOWCASE-carcass {
-        //  SCALING
-        height: 100vh;
+        //  MARGINS & PADDINGS
+        margin: $GV-D-DISTANCE-MEDIUM 0;
     }
+
+
+
+    //  CHUNK:COMPONENT-TAG
+    //  LOCAL VARIABLES NAME = COMPONENT-TAG
+    $LV-D-COMPONENT-TAG-ICON_HEIGHT: 5vh;
+    .S-TAGS-tag {
+        //  SCALING
+        width: max-content;
+
+        .S-TAG-carcass {
+            //  CSS-GRID SETUP
+            display: grid;
+            grid-template-columns: $LV-D-COMPONENT-TAG-ICON_HEIGHT max-content;
+            grid-template-rows: 1fr;
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+            //  SCALING
+            height: $LV-D-COMPONENT-TAG-ICON_HEIGHT;
+            ////  BACKGROUND
+            //background:
+            //    linear-gradient(0deg, transparent 0%, transparent 100%) padding-box,
+            //    linear-gradient(130deg, $PALETTE-SLATE, rgba($PALETTE-SMOKE, 0.4)) border-box;
+            ////  BORDER
+            //border: $GV-D-BORDER_WIDTH solid transparent;
+            //border-radius: $GV-D-BORDER_RADIUS-SMALL * 1.2;
+
+            &:hover {
+                .S-TAG-icon {
+                    //  FILTER
+                    filter: brightness(110%);
+                }
+                .S-TAG-title {
+                    //  FILTER
+                    filter: brightness(120%);
+                }
+            }
+
+            .S-TAG-icon {
+                //  CSS-GRID CONFIGURATION
+                grid-area: 1 / 1 / 2 / 2;
+                //  SCALING
+                height: $LV-D-COMPONENT-TAG-ICON_HEIGHT;
+                //  TRANSITION
+                transition: filter 0.2s;
+
+                .I-TAG-icon {
+                    //  SCALING
+                    height: $LV-D-COMPONENT-TAG-ICON_HEIGHT;
+                    //  STREAMLINING
+                    border-radius: $GV-D-BORDER_RADIUS-SMALL 0 0 $GV-D-BORDER_RADIUS-SMALL;
+                    //  FLEXBOX
+                    display: flex;
+                }
+            }
+            .S-TAG-title {
+                //  CSS-GRID CONFIGURATION
+                grid-area: 1 / 2 / 2 / 3;
+                //  SCALING
+                height: $LV-D-COMPONENT-TAG-ICON_HEIGHT;
+                //  BACKGROUND
+                background-color: $PALETTE-GRAPHITE;
+                //  FLEXBOX
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                //  MARGINS & PADDINGS
+                padding: 0 $GV-D-DISTANCE-MICRO * 1.2;
+                //  STREAMLINING
+                border-radius: 0 $GV-D-BORDER_RADIUS-SMALL $GV-D-BORDER_RADIUS-SMALL 0;
+                //  FILTER
+                filter: brightness(100%);
+                //  TRANSITION
+                transition: filter 0.2s;
+
+                .T-TAG-title {
+                    //  FONT SETTINGS
+                    color: $PALETTE-ASH;
+                }
+            }
+        }
+    }
+
+
+
+    //  CHUNK:HOME-SHOWCASE-SKILLS
+    //  LOCAL VARIABLES NAME = HOME-SHOWCASE-SKILLS
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES);
+    $LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH);
+    .S-SHOWCASE-carcass {
+        .S-SKILLS-carcass {
+            //  CSS-GRID SETUP
+            display: grid;
+            grid-template-columns: $LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS;
+            grid-template-rows: $LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS;
+            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+            grid-row-gap: $GV-D-DISTANCE-MEDIUM;
+            //  MARGINS & PADDINGS
+            margin: 0 $GV-D-DISTANCE-MEDIUM;
+
+            .S-SKILLS-all {
+                //  BACKGROUND
+                background:
+                    linear-gradient(328deg, $PALETTE-MIDNIGHT 0%, $PALETTE-GRAPHITE 100%) padding-box,
+                    linear-gradient(180deg, $PALETTE-SLATE, rgba($PALETTE-SMOKE, 0.4)) border-box;
+                //  BORDER
+                border: $GV-D-BORDER_WIDTH solid transparent;
+                border-radius: $GV-D-BORDER_RADIUS-NORMAL;
+                //  TRANSITION
+                transition: filter 0.2s;
+                //  FLEXBOX
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                //  FILTER
+                filter: brightness(100%);
+                //  POSITIONING
+                position: relative;
+                //  ISOLATION
+                isolation: isolate;
+
+                &::before {
+                    //  BEFORE
+                    content: '';
+                    //  POSITIONING
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    //  BACKGROUND
+                    background: inherit;
+                    //  BORDER
+                    border-radius: inherit;
+                    //  Z-INDEX
+                    z-index: -1;
+                    //  TRANSITION
+                    transition: filter 0.2s;
+                    //  FILTER
+                    filter: brightness(100%);
+                }
+
+                &:hover::before {
+                    //  FILTER
+                    filter: brightness(90%);
+                }
+
+                //  PLACE CHILDREN ABOVE PARENT
+                & > * {
+                    //  POSITIONING
+                    position: relative;
+                    //  Z-INDEX
+                    z-index: 1;
+                }
+
+                .S-ALL-carcass {
+                    //  CSS-GRID SETUP
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(2, max-content);
+                    grid-column-gap: 0;
+                    grid-row-gap: $GV-D-DISTANCE-REGULAR;
+                    //  MARGINS & PADDINGS
+                    margin-top: $GV-D-DISTANCE-MEDIUM;
+                    margin-bottom: $GV-D-DISTANCE-BIG;
+
+                    .S-ALL-title {
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 1 / 2 / 2;
+                        //  FLEXBOX
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+
+                        .I-ALL-icon {
+                            //  SCALING
+                            height: 3.8vh;
+                        }
+
+                        .T-ALL-title {
+                            //  FONT SETTINGS
+                            color: $PALETTE-ASH;
+                            //  MARGINS & PADDINGS
+                            margin-left: $GV-D-DISTANCE-MICRO;
+                        }
+                    }
+                    .S-ALL-tags {
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 2 / 1 / 3 / 2;
+
+                        .S-TAGS-carcass {
+                            //  FLEXBOX
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            gap: $GV-D-DISTANCE-MICRO;
+                            //  MARGINS & PADDINGS
+                            margin: 0 $GV-D-DISTANCE-MEDIUM;
+                            //  SCALING
+                            max-width: $LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH;
+                        }
+                    }
+                }
+            }
+            .S-SKILLS-web {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB;
+            }
+            .S-SKILLS-design {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN;
+            }
+            .S-SKILLS-3d {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D;
+            }
+            .S-SKILLS-languages {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES;
+            }
+        }
+    }
+
 }
