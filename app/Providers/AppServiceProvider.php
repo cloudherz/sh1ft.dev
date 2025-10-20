@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Services\IPLocationService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+
     }
 
     /**
@@ -32,6 +33,15 @@ class AppServiceProvider extends ServiceProvider
         view()->share('APP_LaunchDate', $App_Data['LaunchDate']);
         view()->share('APP_LaunchYear', $App_Data['LaunchYear']);
         view()->share('APP_TransitionTime', $App_Data['TransitionTime']);
+
+        /*
+        |--------------------------------------------------------------------------
+        | Source: Autoexec
+        |--------------------------------------------------------------------------
+        */
+
+        $Autoexec_Data = autoexecMain();
+        view()->share('AE_Country', $Autoexec_Data['Country']);
 
         /*
         |--------------------------------------------------------------------------

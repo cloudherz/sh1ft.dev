@@ -20,6 +20,7 @@ function headerOverlaysInteractions() {
         if (button) {
             button.classList.remove('I-CONTENT-dropdown_arrow_animation');
             void button.offsetWidth;
+            void button.getBoundingClientRect();
             button.classList.add('I-CONTENT-dropdown_arrow_animation');
         }
     }
@@ -33,6 +34,8 @@ function headerOverlaysInteractions() {
             part2.classList.remove('I-CONTENT-languages_icon_part2_animation');
             void part1.offsetWidth;
             void part2.offsetWidth;
+            void part1.getBoundingClientRect();
+            void part2.getBoundingClientRect();
             part1.classList.add('I-CONTENT-languages_icon_part1_animation');
             part2.classList.add('I-CONTENT-languages_icon_part2_animation');
         }
@@ -78,7 +81,7 @@ function headerOverlaysInteractions() {
     function resetOutsideClickListener(event: MouseEvent) {
         let target: HTMLElement = event.target as HTMLElement;
 
-        if (target.tagName === 'P' || target.tagName === 'IMG') {
+        if (target.tagName === 'P' || target.tagName === 'IMG' || target.tagName === 'path' || target.tagName === 'svg') {
             const triggerDiv: HTMLElement | null = target.closest('div');
             if (triggerDiv) {
                 target = triggerDiv;
@@ -160,7 +163,7 @@ function headerOverlaysInteractions() {
 
             let target = e.target as HTMLElement;
 
-            if (target.tagName === 'P' || target.tagName === 'IMG') {
+            if (target.tagName === 'P' || target.tagName === 'IMG' || target.tagName === 'path' || target.tagName === 'svg') {
                 const triggerDiv = target.closest('div');
                 if (triggerDiv) {
                     target = triggerDiv;
@@ -204,7 +207,7 @@ function headerOverlaysInteractions() {
 
             if (!target) return;
 
-            if (target.tagName === 'P' || target.tagName === 'IMG') {
+            if (target.tagName === 'P' || target.tagName === 'IMG' || target.tagName === 'path' || target.tagName === 'svg') {
                 const triggerDiv = target.closest('div');
                 if (triggerDiv) {
                     target = triggerDiv;
@@ -234,12 +237,14 @@ function headerOverlaysInteractions() {
 
         if (!target) return;
 
-        if (target.tagName === 'P' || target.tagName === 'IMG') {
+        if (target.tagName === 'P' || target.tagName === 'IMG' || target.tagName === 'path' || target.tagName === 'svg') {
             const triggerDiv = target.closest('div');
             if (triggerDiv) {
                 target = triggerDiv;
             }
         }
+
+        console.log(target);
 
         const targetId = target.id;
 

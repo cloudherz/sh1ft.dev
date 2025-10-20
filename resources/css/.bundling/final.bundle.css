@@ -195,14 +195,15 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image {
     height: 3.488372093vh;
-    transition: filter 0.2s;
+    fill: #B6B6B6;
+    transition: fill 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover {
     background-color: #1C1C1C;
     color: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover .I-LOGO-image {
-    filter: brightness(141%);
+    fill: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content {
     grid-area: 1/2/2/3;
@@ -228,7 +229,8 @@ body {
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow {
     height: 1.2vh;
     margin-left: 1.1252813203vh;
-    transition: transform 0.2s ease-in-out, filter 0.2s;
+    fill: #B6B6B6;
+    transition: transform 0.2s ease-in-out, fill 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow_animation {
     animation: KF-HEADER_DROPDOWN_ICON_CLICK_ANIMATION 0.2s ease-in-out;
@@ -249,7 +251,7 @@ body {
     color: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text:hover .I-CONTENT-dropdown_arrow {
-    filter: brightness(141%);
+    fill: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-projects {
     grid-area: 1/1/2/2;
@@ -275,7 +277,8 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages .I-CONTENT-languages_all {
     position: absolute;
-    transition: transform 0.2s ease-in-out, filter 0.2s;
+    fill: #B6B6B6;
+    transition: transform 0.2s ease-in-out, fill 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages .I-CONTENT-languages_combined {
     height: 3.488372093vh;
@@ -323,7 +326,7 @@ body {
     color: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages:hover .I-CONTENT-languages_all {
-    filter: brightness(141%);
+    fill: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays {
     grid-area: 2/1/3/6;
@@ -669,14 +672,15 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass .I-LOGO-image {
     height: 3.488372093vh;
-    transition: filter 0.2s;
+    fill: #B6B6B6;
+    transition: fill 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover {
     background-color: #1C1C1C;
     color: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-logo .S-LOGO-carcass:hover .I-LOGO-image {
-    filter: brightness(141%);
+    fill: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content {
     grid-area: 1/2/2/3;
@@ -702,7 +706,8 @@ body {
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow {
     height: 1.2vh;
     margin-left: 1.1252813203vh;
-    transition: transform 0.2s ease-in-out, filter 0.2s;
+    fill: #B6B6B6;
+    transition: transform 0.2s ease-in-out, fill 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text .I-CONTENT-dropdown_arrow_animation {
     animation: KF-HEADER_DROPDOWN_ICON_CLICK_ANIMATION 0.2s ease-in-out;
@@ -723,7 +728,7 @@ body {
     color: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-text:hover .I-CONTENT-dropdown_arrow {
-    filter: brightness(141%);
+    fill: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-projects {
     grid-area: 1/1/2/2;
@@ -749,7 +754,8 @@ body {
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages .I-CONTENT-languages_all {
     position: absolute;
-    transition: transform 0.2s ease-in-out, filter 0.2s;
+    fill: #B6B6B6;
+    transition: transform 0.2s ease-in-out, fill 0.2s;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages .I-CONTENT-languages_combined {
     height: 3.488372093vh;
@@ -797,7 +803,7 @@ body {
     color: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-languages:hover .I-CONTENT-languages_all {
-    filter: brightness(141%);
+    fill: #ffffff;
   }
   .S-HEADER-wrapper .S-HEADER-carcass .S-HEADER-content .S-CONTENT-carcass .S-CONTENT-overlays {
     grid-area: 2/1/3/6;

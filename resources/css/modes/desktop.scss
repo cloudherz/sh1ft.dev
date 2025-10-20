@@ -89,8 +89,10 @@
                     .I-LOGO-image {
                         //  SCALING
                         height: $LV-D-HEADER-HEIGHT / 2.15;
+                        //  FILL
+                        fill: $PALETTE-ASH;
                         //  TRANSITION
-                        transition: filter 0.2s;
+                        transition: fill 0.2s;
                     }
                 }
                 .S-LOGO-carcass:hover {
@@ -100,8 +102,8 @@
                     color: $PALETTE-SNOW;
 
                     .I-LOGO-image {
-                        //  FILTER
-                        filter: brightness(141%);
+                        //  FILL
+                        fill: $PALETTE-SNOW;
                     }
                 }
             }
@@ -142,10 +144,12 @@
                             height: 1.2vh;
                             //  MARGINS & PADDINGS
                             margin-left: $GV-D-DISTANCE-MICRO;
+                            //  FILL
+                            fill: $PALETTE-ASH;
                             //  TRANSITION
                             transition:
                                 transform 0.2s ease-in-out,
-                                filter 0.2s;
+                                fill 0.2s;
                         }
                         .I-CONTENT-dropdown_arrow_animation {
                             animation: KF-HEADER_DROPDOWN_ICON_CLICK_ANIMATION 0.2s ease-in-out;
@@ -165,7 +169,8 @@
                         color: $PALETTE-SNOW;
 
                         .I-CONTENT-dropdown_arrow {
-                            filter: brightness(141%);
+                            //  FILL
+                            fill: $PALETTE-SNOW;
                         }
                     }
                     .S-CONTENT-projects {
@@ -205,10 +210,12 @@
                         .I-CONTENT-languages_all {
                             //  POSITIONING
                             position: absolute;
+                            //  FILL
+                            fill: $PALETTE-ASH;
                             //  TRANSITION
                             transition:
                                 transform 0.2s ease-in-out,
-                                filter 0.2s;
+                                fill 0.2s;
                         }
                         .I-CONTENT-languages_combined {
                             //  SCALING
@@ -253,8 +260,8 @@
                         color: $PALETTE-SNOW;
 
                         .I-CONTENT-languages_all {
-                            //  FILTER
-                            filter: brightness(141%);
+                            //  FILL
+                            fill: $PALETTE-SNOW;
                         }
                     }
                     .S-CONTENT-overlays {

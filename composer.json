@@ -10,10 +10,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
+        "ip2location/ip2location-php": "^9.8",
         "laravel/framework": "^12.0",
         "laravel/telescope": "^5.9",
         "laravel/tinker": "^2.10.1",
         "livewire/livewire": "^3.6",
+        "stevebauman/location": "^7.6",
         "whichbrowser/parser": "^2.1"
     },
     "require-dev": {
@@ -34,6 +36,9 @@
         "files": [
             "app/Scripts/App/Export.php",
             "app/Scripts/App/Info.php",
+
+            "app/Scripts/Autoexec/Export.php",
+            "app/Scripts/Autoexec/DetectCountry.php",
 
             "app/Scripts/Gen/Time.php"
         ]

@@ -14,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 
-Route::view('/', 'pages.generic.home')->name('home');
+Route::redirect('/', '/ru/home');
+
+Route::view('/ru/home', 'pages.generic.home')->name('home');

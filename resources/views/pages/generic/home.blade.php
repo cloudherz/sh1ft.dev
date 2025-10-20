@@ -12,9 +12,8 @@
                 <div class="S-FRONT-wrapper">
                     <div class="S-FRONT-carcass">
                         <div class="S-FRONT-background">
-{{--                            <img class="I-FRONT-background_image" alt="sh1ft_logo" src="images/sh1ft/home_background.svg" draggable="false">--}}
                             <video class="I-FRONT-background_image" autoplay muted playsinline loop>
-                                <source src="images/sh1ft/main_logo.webm" type="video/webm">
+                                <source src="{{ asset('images/sh1ft/main_logo.webm') }}" type="video/webm">
                             </video>
                         </div>
                         <div class="S-FRONT-content">
@@ -337,7 +336,7 @@
             <div class="S-HOME-footer">
                 <div class="S-FOOTER-wrapper">
                     <div class="S-FOOTER-carcass">
-                        footer
+                        <p>{{ $AE_Country }}</p>
                     </div>
                 </div>
             </div>
