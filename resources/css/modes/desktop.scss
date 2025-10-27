@@ -319,6 +319,7 @@
 
     //  CHUNK:HOME-FRONT
     //  LOCAL VARIABLES NAME = HOME-FRONT
+    $LV-D-HOME-FRONT-PATH_TRANSLATE: 7.5vh;
     .S-FRONT-carcass {
         //  CSS-GRID SETUP
         display: grid;
@@ -335,11 +336,10 @@
         //  BACKGROUND
         background:
             radial-gradient(
-                    circle at 50% -30%,
+                    circle at 50% -40%,
                     $PALETTE-SH1FT 0%,
-                    color-mix(in oklab, $PALETTE-SH1FT 76%, $PALETTE-GLASS) 33%,
-                    color-mix(in oklab, $PALETTE-SH1FT 50%, $PALETTE-GLASS) 66%,
-                    $PALETTE-GLASS 100%
+                    color-mix(in oklab, $PALETTE-SH1FT 100%, $PALETTE-GLASS) 25%,
+                    $PALETTE-GLASS 92%
             ) no-repeat;
 
         .S-FRONT-background {
@@ -356,8 +356,8 @@
             .I-FRONT-background_image {
                 //  SCALING
                 height: 178vh;
-                //  FILTER
-                filter: opacity(12%);
+                //  OPACITY
+                opacity: 0.1;
                 //  POSITIONING
                 margin-top: -50vh;
                 margin-right: -20vh;
@@ -437,6 +437,19 @@
                                 .I-BUTTON-arrow {
                                     //  FILL
                                     fill: $PALETTE-SNOW;
+
+                                    .PATH-1 {
+                                        //  TRANSFORM
+                                        transform: translateX($LV-D-HOME-FRONT-PATH_TRANSLATE);
+                                        //  OPACITY
+                                        opacity: 0;
+                                    }
+                                    .PATH-2 {
+                                        //  TRANSFORM
+                                        transform: translateX(0vh);
+                                        //  OPACITY
+                                        opacity: 1;
+                                    }
                                 }
                             }
 
@@ -457,7 +470,28 @@
                                 //  FILL
                                 fill: $PALETTE-OBSIDIAN;
                                 //  TRANSITION
-                                transition: fill 0.2s;
+                                transition:
+                                    fill 0.2s,
+                                    transform 4s;
+
+                                .PATH-1, .PATH-2 {
+                                    //  TRANSITION
+                                    transition:
+                                        transform 0.2s,
+                                        opacity 0.2s;
+                                }
+                                .PATH-1 {
+                                    //  TRANSFORM
+                                    transform: translateX(0vh);
+                                    //  OPACITY
+                                    opacity: 1;
+                                }
+                                .PATH-2 {
+                                    //  TRANSFORM
+                                    transform: translateX(-$LV-D-HOME-FRONT-PATH_TRANSLATE);
+                                    //  OPACITY
+                                    opacity: 0;
+                                }
                             }
                         }
 
@@ -540,9 +574,120 @@
 
     //  CHUNK:HOME-SHOWCASE
     //  LOCAL VARIABLES NAME = HOME-SHOWCASE
+
     .S-SHOWCASE-carcass {
+        //  CSS-GRID SETUP
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
+        grid-column-gap: 0;
+        grid-row-gap: $GV-D-DISTANCE-MEDIUM;
         //  MARGINS & PADDINGS
         margin: $GV-D-DISTANCE-MEDIUM 0;
+
+        .S-SHOWCASE-skills {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+        .S-SHOWCASE-projects {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+    }
+
+
+
+    //  CHUNK:HOME-SHOWCASE-SKILLS
+    //  LOCAL VARIABLES NAME = HOME-SHOWCASE-SKILLS
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D);
+    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES);
+    $LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH);
+    .S-SHOWCASE-carcass {
+        .S-SKILLS-carcass {
+            //  CSS-GRID SETUP
+            display: grid;
+            grid-template-columns: $LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS;
+            grid-template-rows: $LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS;
+            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+            grid-row-gap: $GV-D-DISTANCE-MEDIUM;
+            //  MARGINS & PADDINGS
+            margin: 0 $GV-D-DISTANCE-MEDIUM;
+
+            .S-SKILLS-all {
+                //  FLEXBOX
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .S-ALL-carcass {
+                    //  CSS-GRID SETUP
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: repeat(2, max-content);
+                    grid-column-gap: 0;
+                    grid-row-gap: $GV-D-DISTANCE-REGULAR;
+                    //  MARGINS & PADDINGS
+                    margin-top: $GV-D-DISTANCE-MEDIUM;
+                    margin-bottom: $GV-D-DISTANCE-BIG;
+
+                    .S-ALL-title {
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 1 / 1 / 2 / 2;
+                        //  FLEXBOX
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center;
+
+                        .I-ALL-icon {
+                            //  SCALING
+                            height: 3.8vh;
+                        }
+
+                        .T-ALL-title {
+                            //  FONT SETTINGS
+                            color: $PALETTE-ASH;
+                            //  MARGINS & PADDINGS
+                            margin-left: $GV-D-DISTANCE-MICRO;
+                        }
+                    }
+                    .S-ALL-tags {
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 2 / 1 / 3 / 2;
+
+                        .S-TAGS-carcass {
+                            //  FLEXBOX
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            gap: $GV-D-DISTANCE-MICRO;
+                            //  MARGINS & PADDINGS
+                            margin: 0 $GV-D-DISTANCE-MEDIUM;
+                            //  SCALING
+                            max-width: $LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH;
+                        }
+                    }
+                }
+            }
+            .S-SKILLS-web {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB;
+            }
+            .S-SKILLS-design {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN;
+            }
+            .S-SKILLS-3d {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D;
+            }
+            .S-SKILLS-languages {
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES;
+            }
+        }
     }
 
 
@@ -629,148 +774,114 @@
 
 
 
-    //  CHUNK:HOME-SHOWCASE-SKILLS
-    //  LOCAL VARIABLES NAME = HOME-SHOWCASE-SKILLS
-    $LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS);
-    $LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS);
-    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB);
-    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN);
-    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D);
-    $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES);
-    $LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH: map-get($MODE_VALUES, LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH);
-    .S-SHOWCASE-carcass {
-        .S-SKILLS-carcass {
-            //  CSS-GRID SETUP
-            display: grid;
-            grid-template-columns: $LV-D-HOME-SHOWCASE-SKILLS-GRID_COLUMNS;
-            grid-template-rows: $LV-D-HOME-SHOWCASE-SKILLS-GRID_ROWS;
-            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
-            grid-row-gap: $GV-D-DISTANCE-MEDIUM;
+    //  CHUNK:COMPONENT-TILEROW
+    //  LOCAL VARIABLES NAME = COMPONENT-TILEROW
+    $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT: calc(100vw - $GV-D-DISTANCE-MEDIUM * 2);
+    $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT: calc(($LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT - $GV-D-DISTANCE-MEDIUM) / 2);
+    $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT: calc(($LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT - $GV-D-DISTANCE-MEDIUM) / 2);
+    .S-PROJECTS-carcass {
+        > :not(:last-child) {
+            //  MARGINS & PADDINGS
+            margin-bottom: $GV-D-DISTANCE-MEDIUM;
+        }
+
+        .S-TILEROW-carcass {
             //  MARGINS & PADDINGS
             margin: 0 $GV-D-DISTANCE-MEDIUM;
 
-            .S-SKILLS-all {
-                //  BACKGROUND
-                background:
-                    linear-gradient(328deg, $PALETTE-MIDNIGHT 0%, $PALETTE-GRAPHITE 100%) padding-box,
-                    linear-gradient(180deg, $PALETTE-SLATE, rgba($PALETTE-SMOKE, 0.4)) border-box;
-                //  BORDER
-                border: $GV-D-BORDER_WIDTH solid transparent;
-                border-radius: $GV-D-BORDER_RADIUS-NORMAL;
-                //  TRANSITION
-                transition: filter 0.2s;
+            .S-TILE-all {
                 //  FLEXBOX
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                //  FILTER
-                filter: brightness(100%);
-                //  POSITIONING
-                position: relative;
-                //  ISOLATION
-                isolation: isolate;
 
-                &::before {
-                    //  BEFORE
-                    content: '';
-                    //  POSITIONING
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    //  BACKGROUND
-                    background: inherit;
+                img {
+                    width: 100%;
                     //  BORDER
-                    border-radius: inherit;
-                    //  Z-INDEX
-                    z-index: -1;
-                    //  TRANSITION
-                    transition: filter 0.2s;
-                    //  FILTER
-                    filter: brightness(100%);
-                }
-
-                &:hover::before {
-                    //  FILTER
-                    filter: brightness(90%);
-                }
-
-                //  PLACE CHILDREN ABOVE PARENT
-                & > * {
-                    //  POSITIONING
-                    position: relative;
-                    //  Z-INDEX
-                    z-index: 1;
-                }
-
-                .S-ALL-carcass {
-                    //  CSS-GRID SETUP
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    grid-template-rows: repeat(2, max-content);
-                    grid-column-gap: 0;
-                    grid-row-gap: $GV-D-DISTANCE-REGULAR;
-                    //  MARGINS & PADDINGS
-                    margin-top: $GV-D-DISTANCE-MEDIUM;
-                    margin-bottom: $GV-D-DISTANCE-BIG;
-
-                    .S-ALL-title {
-                        //  CSS-GRID CONFIGURATION
-                        grid-area: 1 / 1 / 2 / 2;
-                        //  FLEXBOX
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: center;
-
-                        .I-ALL-icon {
-                            //  SCALING
-                            height: 3.8vh;
-                        }
-
-                        .T-ALL-title {
-                            //  FONT SETTINGS
-                            color: $PALETTE-ASH;
-                            //  MARGINS & PADDINGS
-                            margin-left: $GV-D-DISTANCE-MICRO;
-                        }
-                    }
-                    .S-ALL-tags {
-                        //  CSS-GRID CONFIGURATION
-                        grid-area: 2 / 1 / 3 / 2;
-
-                        .S-TAGS-carcass {
-                            //  FLEXBOX
-                            display: flex;
-                            justify-content: center;
-                            flex-wrap: wrap;
-                            gap: $GV-D-DISTANCE-MICRO;
-                            //  MARGINS & PADDINGS
-                            margin: 0 $GV-D-DISTANCE-MEDIUM;
-                            //  SCALING
-                            max-width: $LV-D-HOME-SHOWCASE-SKILLS-MAX_WIDTH;
-                        }
-                    }
+                    border-radius: $GV-D-BORDER_RADIUS-NORMAL;
                 }
             }
-            .S-SKILLS-web {
-                //  CSS-GRID CONFIGURATION
-                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_WEB;
+        }
+        .S-TILEROW-100 {
+            display: grid;
+            grid-template-columns: $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT;
+            grid-template-rows: 1fr;
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+
+            .S-TILEROW-slot_1 {
+                grid-area: 1 / 1 / 2 / 2;
             }
-            .S-SKILLS-design {
-                //  CSS-GRID CONFIGURATION
-                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_DESIGN;
+        }
+        .S-TILEROW-50_50 {
+            display: grid;
+            grid-template-columns: repeat(2, $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT);
+            grid-template-rows: 1fr;
+            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+            grid-row-gap: 0;
+
+            .S-TILEROW-slot_1 {
+                grid-area: 1 / 1 / 2 / 2;
             }
-            .S-SKILLS-3d {
-                //  CSS-GRID CONFIGURATION
-                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_3D;
+            .S-TILEROW-slot_2 {
+                grid-area: 1 / 2 / 2 / 3;
             }
-            .S-SKILLS-languages {
-                //  CSS-GRID CONFIGURATION
-                grid-area: $LV-D-HOME-SHOWCASE-SKILLS-GRID_CARD_LANGUAGES;
+        }
+        .S-TILEROW-50_25_25 {
+            display: grid;
+            grid-template-columns: $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT repeat(2, $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT);
+            grid-template-rows: 1fr;
+            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+            grid-row-gap: 0;
+
+            .S-TILEROW-slot_1 {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+            .S-TILEROW-slot_2 {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+            .S-TILEROW-slot_3 {
+                grid-area: 1 / 3 / 2 / 4;
+            }
+        }
+        .S-TILEROW-25_50_25 {
+            display: grid;
+            grid-template-columns: $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT;
+            grid-template-rows: 1fr;
+            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+            grid-row-gap: 0;
+
+            .S-TILEROW-slot_1 {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+            .S-TILEROW-slot_2 {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+            .S-TILEROW-slot_3 {
+                grid-area: 1 / 3 / 2 / 4;
+            }
+        }
+        .S-TILEROW-25_25_50 {
+            display: grid;
+            grid-template-columns: repeat(2, $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT) $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT;
+            grid-template-rows: 1fr;
+            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+            grid-row-gap: 0;
+
+            .S-TILEROW-slot_1 {
+                grid-area: 1 / 1 / 2 / 2;
+            }
+            .S-TILEROW-slot_2 {
+                grid-area: 1 / 2 / 2 / 3;
+            }
+            .S-TILEROW-slot_3 {
+                grid-area: 1 / 3 / 2 / 4;
             }
         }
     }
 
+
+
+    //  CHUNK:COMPONENT-PROJECT_TILE
+    //  LOCAL VARIABLES NAME = COMPONENT-TAG
 }

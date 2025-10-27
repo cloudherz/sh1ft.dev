@@ -69,3 +69,5 @@ function toggleHeaderOnScroll() {
 }
 
 toggleHeaderOnScroll();
+document.addEventListener('turbo:load', toggleHeaderOnScroll);
+document.addEventListener('turbo:render', toggleHeaderOnScroll);

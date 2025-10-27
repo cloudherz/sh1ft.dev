@@ -1,0 +1,57 @@
+//  BG-SOFT_TOUCH
+$PRESET-BG-SOFT_TOUCH-BG:
+    linear-gradient(352deg, $PALETTE-MIDNIGHT 35%, $PALETTE-GRAPHITE 100%) padding-box,
+    linear-gradient(180deg, $PALETTE-SLATE, rgba($PALETTE-SMOKE, 0.4)) border-box;
+.PRESET-BG-SOFT_TOUCH {
+    //  BACKGROUND
+    background: $PRESET-BG-SOFT_TOUCH-BG;
+    //  BORDER
+    border: $GV-D-BORDER_WIDTH solid transparent;
+    border-radius: $GV-D-BORDER_RADIUS-NORMAL;
+    //  TRANSITION
+    transition: filter 0.2s;
+    //  FILTER
+    filter: brightness(100%);
+    //  POSITIONING
+    position: relative;
+    //  ISOLATION
+    isolation: isolate;
+
+    &::before {
+        //  BEFORE
+        content: '';
+        //  POSITIONING
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        //  BACKGROUND
+        background: inherit;
+        //  BORDER
+        border-radius: inherit;
+        //  Z-INDEX
+        z-index: -1;
+        //  TRANSITION
+        transition: filter 0.2s;
+        //  FILTER
+        filter: brightness(100%);
+    }
+
+    &:hover::before {
+        //  FILTER
+        filter: brightness(85%);
+    }
+
+    //  PLACE CHILDREN ABOVE PARENT
+    & > * {
+        //  POSITIONING
+        position: relative;
+        //  Z-INDEX
+        z-index: 1;
+    }
+}
+
+
+
+//

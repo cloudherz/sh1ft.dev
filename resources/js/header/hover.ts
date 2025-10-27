@@ -15,3 +15,5 @@ function showHeaderOnHoverWhenHidden() {
 }
 
 showHeaderOnHoverWhenHidden();
+document.addEventListener('turbo:load', showHeaderOnHoverWhenHidden);
+document.addEventListener('turbo:render', showHeaderOnHoverWhenHidden);

@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Services\IPLocationService;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -42,6 +41,12 @@ class AppServiceProvider extends ServiceProvider
 
         $Autoexec_Data = autoexecMain();
         view()->share('AE_Country', $Autoexec_Data['Country']);
+
+        $lkey = getLocalization();
+        view()->share('lkey', $lkey);
+
+        $locale = GetUrlLocale();
+        view()->share('locale', $locale);
 
         /*
         |--------------------------------------------------------------------------

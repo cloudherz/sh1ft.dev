@@ -76,3 +76,5 @@ function detectZoom() {
 }
 
 detectZoom();
+document.addEventListener('turbo:load', detectZoom);
+document.addEventListener('turbo:render', detectZoom);

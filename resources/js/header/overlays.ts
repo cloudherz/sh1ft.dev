@@ -244,8 +244,6 @@ function headerOverlaysInteractions() {
             }
         }
 
-        console.log(target);
-
         const targetId = target.id;
 
         if (targetId && targetId.startsWith("DESKTOP-HEADER_OVERLAY_TRIGGER-")) {
@@ -309,4 +307,6 @@ function headerOverlaysInteractions() {
 }
 
 headerOverlaysInteractions();
+document.addEventListener('turbo:load', headerOverlaysInteractions);
+document.addEventListener('turbo:render', headerOverlaysInteractions);
 

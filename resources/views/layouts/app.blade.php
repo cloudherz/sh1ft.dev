@@ -1,3 +1,14 @@
+@php
+    // Получаем текущий путь без префикса языка
+    $currentPath = request()->path();
+    $currentPathClean = preg_replace('/^(en|ru|bg|jp)\//', '', $currentPath);
+
+    // Если путь пустой, используем 'home'
+    if (empty($currentPathClean)) {
+        $currentPathClean = 'home';
+    }
+@endphp
+
 <!doctype html>
 <x-comments.todo />
 <x-comments.credits />
@@ -37,7 +48,6 @@
     <link rel="apple-touch-icon" href="">
 
     @vite(['resources/css/.bundling/final.bundle.css'])
-    @livewireStyles
 </head>
 <body>
     <div class="S-DESKTOP-wrapper">
@@ -96,7 +106,27 @@
                                                     other
                                                 </div>
                                                 <div class="S-OVERLAY-languages S-OVERLAY-all DEV-DISABLE_VISIBILITY" id="DESKTOP-HEADER_OVERLAY-languages">
-                                                    ln
+
+
+
+                                                    <div class="S-LANGUAGES-wrapper">
+                                                        <div class="S-LANGUAGES-carcass">
+                                                            <a class="DEV-NO_PREFETCH" href="/change_language/en/{{ $currentPathClean }}">
+                                                                <span>English</span>
+                                                            </a>
+                                                            <a class="DEV-NO_PREFETCH" href="/change_language/ru/{{ $currentPathClean }}">
+                                                                <span>Русский</span>
+                                                            </a>
+                                                            <a class="DEV-NO_PREFETCH" href="/change_language/bg/{{ $currentPathClean }}">
+                                                                <span>Български</span>
+                                                            </a>
+                                                            <a class="DEV-NO_PREFETCH" href="/change_language/jp/{{ $currentPathClean }}">
+                                                                <span>日本</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+
                                                 </div>
                                             </div>
                                         </div>
@@ -128,9 +158,6 @@
             @yield('mode-mobile')
         </div>
     </div>
-    @livewireScripts
-    <x-js.livewire.delay/>
-    <x-js.transitions.opacity/>
     @vite(['resources/js/app.js'])
     @yield('scripts')
 </body>

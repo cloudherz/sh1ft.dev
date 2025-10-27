@@ -1,4 +1,4 @@
-<div class="S-SKILLS-{{ $categoryName }} S-SKILLS-all">
+<div class="S-SKILLS-{{ $categoryName }} S-SKILLS-all PRESET-BG-SOFT_TOUCH">
     <div class="S-ALL-wrapper">
         <div class="S-ALL-carcass">
             <div class="S-ALL-title">

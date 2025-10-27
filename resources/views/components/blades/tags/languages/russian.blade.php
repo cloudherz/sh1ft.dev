@@ -1,0 +1,10 @@
+<x-blades.tags.tag
+    icon='
+        <svg class="I-TAG-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H48V16H0V0Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 16H48V32H0V16Z" fill="#0039A6"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 31.9961H48V47.9992H0V31.9961Z" fill="#D52B1E"/>
+        </svg>
+    '
+    title="Русский (Родной)"
+/>

@@ -11,7 +11,11 @@ class IPLocationService
 
     public function __construct()
     {
-        $this->database = new Database(storage_path('app/ip2location/IP2LOCATION-LITE-DB1.BIN'));
+        try {
+            $this->database = new Database(storage_path('app/ip2location/IP2LOCATION-LITE-DB1.BIN'));
+        } catch (Exception) {
+
+        }
     }
 
     public function getCountryFromIP($ip = null)
