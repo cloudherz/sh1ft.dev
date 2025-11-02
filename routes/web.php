@@ -29,9 +29,9 @@ Route::get('/', function () {
     return redirect('/en/home');
 });
 
-Route::get('/3d', function () {
-    return redirect('/en/3d');
-});
+//Route::get('/3d', function () {
+//    return redirect('/en/3d');
+//});
 
 Route::prefix('{language}')
     ->where(['language' => 'en|ru|bg|jp'])
@@ -40,7 +40,7 @@ Route::prefix('{language}')
             return view('pages.generic.home');
         })->name('home');
 
-        Route::get('/3d', function () {
-            return view('pages.generic.home');
-        })->name('3d');
+        Route::get('/leee', function () {
+            return view('pages.generic.leee');
+        })->name('leee');
     });

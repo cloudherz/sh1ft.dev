@@ -1,9 +1,7 @@
 @php
-    // Получаем текущий путь без префикса языка
     $currentPath = request()->path();
     $currentPathClean = preg_replace('/^(en|ru|bg|jp)\//', '', $currentPath);
 
-    // Если путь пустой, используем 'home'
     if (empty($currentPathClean)) {
         $currentPathClean = 'home';
     }

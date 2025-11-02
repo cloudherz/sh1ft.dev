@@ -5,7 +5,7 @@
 
 body {
   background: #0E0E0E;
-  font-family: "PangramSansNormal", sans-serif;
+  font-family: "PangramSansNormal", "NotoSansJapaneseNormal", sans-serif;
   color: #ffffff;
 }
 
@@ -24,6 +24,10 @@ body {
   font-family: "PangramSansNormal";
   src: url("../../fonts/pangram_sans/normal/variable.woff2") format("woff2"), url("../../fonts/pangram_sans/normal/variable.ttf") format("truetype");
 }
+@font-face {
+  font-family: "NotoSansJapaneseNormal";
+  src: url("../../fonts/noto_sans_japanese/normal/variable.woff2") format("woff2"), url("../../fonts/noto_sans_japanese/normal/variable.ttf") format("truetype");
+}
 .DEV-DISABLE_SELECTION {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -37,12 +41,25 @@ body {
 
 .PRESET-BG-SOFT_TOUCH {
   background: linear-gradient(352deg, #1C1C1C 35%, #2B2B2B 100%) padding-box, linear-gradient(180deg, #414141, rgba(54, 54, 54, 0.4)) border-box;
-  border: 0.3vh solid transparent;
   border-radius: 2.5vh;
   transition: filter 0.2s;
-  filter: brightness(100%);
   position: relative;
   isolation: isolate;
+}
+.PRESET-BG-SOFT_TOUCH::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 0.3vh;
+  background: linear-gradient(180deg, #414141, #1C1C1C);
+  mask: linear-gradient(#fff, #fff) content-box, linear-gradient(#fff, #fff);
+  mask-composite: subtract;
+  pointer-events: none;
+  z-index: 2;
 }
 .PRESET-BG-SOFT_TOUCH::before {
   content: "";
@@ -601,16 +618,16 @@ body {
     max-width: 67vh;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-web {
-    grid-area: 0.25;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-design {
-    grid-area: 0.0833333333;
+    grid-area: 1 / 2 / 2 / 3;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-3d {
-    grid-area: 0.3333333333;
+    grid-area: 2 / 1 / 3 / 2;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-languages {
-    grid-area: 0.1111111111;
+    grid-area: 2 / 2 / 3 / 3;
   }
   .S-TAGS-tag {
     width: max-content;
@@ -657,17 +674,164 @@ body {
   .S-PROJECTS-carcass > :not(:last-child) {
     margin-bottom: 3vh;
   }
+  .S-PROJECTS-carcass .S-TILEROW-tile {
+    border-radius: 2.5vh;
+    display: flex;
+    transition: box-shadow 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile:hover {
+    box-shadow: 0 0 0 1.5vh #2B2B2B;
+    border-radius: 2.5vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile .S-TILE-wrapper {
+    display: flex;
+    flex: 1;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile .S-TILE-wrapper .S-TILE-carcass {
+    display: flex;
+    flex: 1;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile .S-TILE-wrapper .S-TILE-carcass .S-TILE-all {
+    display: flex;
+    flex: 1;
+  }
   .S-PROJECTS-carcass .S-TILEROW-carcass {
     margin: 0 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all {
     display: flex;
     justify-content: center;
-    align-items: center;
   }
-  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all img {
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image {
+    grid-area: 1/1/2/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 2.5vh 2.5vh;
+    overflow: clip;
+    position: relative;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link {
+    display: flex;
     width: 100%;
-    border-radius: 2.5vh;
+    text-decoration: none;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link:hover .I-IMAGE-image {
+    filter: brightness(0.8);
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link:hover .S-ALL-image_hover {
+    opacity: 1;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link .I-IMAGE-image {
+    transition: filter 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image_hover .T-IMAGE-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.1252813203vh;
+    color: #ffffff;
+    text-shadow: 0 0 8vh #000000;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image_hover .T-IMAGE-text .I-IMAGE-icon {
+    height: 3.575vh;
+    padding-bottom: 0.572vh;
+    fill: #ffffff;
+    transition: filter 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info {
+    grid-area: 2/1/3/2;
+    display: flex;
+    flex-direction: column;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text {
+    padding: 3vh 3vh 0 3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.1252813203vh;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link:hover {
+    color: #B6B6B6;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link:hover .I-INFO-icon {
+    filter: brightness(72%);
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link .I-INFO-icon {
+    height: 3.575vh;
+    padding-bottom: 0.858vh;
+    fill: #B6B6B6;
+    transition: filter 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1252813203vh;
+    padding: 1.1252813203vh 3vh 3vh 3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-100 {
+    grid-template-rows: 70vh max-content;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-100 .S-ALL-image_100 {
+    height: 70vh;
+    width: calc(100vw - 6vh - 0.6vh);
+    margin: 0.3vh 0.3vh 0 0.3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-100 .I-IMAGE-image {
+    width: 100%;
+    height: 70vh;
+    border-radius: 1.6666666667vh;
+    object-fit: cover;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-50 {
+    grid-template-rows: 50vh 50vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-50 .S-ALL-image_50 {
+    height: 50vh;
+    width: calc((100vw - 6vh - 3vh) / 2 - 0.6vh);
+    margin: 0.3vh 0.3vh 0 0.3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-50 .I-IMAGE-image {
+    width: 100%;
+    height: 50vh;
+    border-radius: 1.6666666667vh;
+    object-fit: cover;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-25 {
+    grid-template-rows: 50vh max-content;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-25 .S-ALL-image_25 {
+    height: 50vh;
+    width: calc(((100vw - 6vh - 3vh) / 2 - 3vh) / 2 - 0.6vh);
+    margin: 0.3vh 0.3vh 0 0.3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-25 .I-IMAGE-image {
+    width: 100%;
+    height: 50vh;
+    border-radius: 1.6666666667vh;
+    object-fit: cover;
   }
   .S-PROJECTS-carcass .S-TILEROW-100 {
     display: grid;
@@ -687,10 +851,10 @@ body {
     grid-row-gap: 0;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_50 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_50 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 1 / 2 / 2 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 {
     display: grid;
@@ -700,13 +864,13 @@ body {
     grid-row-gap: 0;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 1 / 2 / 2 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 .S-TILEROW-slot_3 {
-    grid-area: 1/3/2/4;
+    grid-area: 1 / 3 / 2 / 4;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 {
     display: grid;
@@ -716,13 +880,13 @@ body {
     grid-row-gap: 0;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 1 / 2 / 2 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 .S-TILEROW-slot_3 {
-    grid-area: 1/3/2/4;
+    grid-area: 1 / 3 / 2 / 4;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 {
     display: grid;
@@ -732,13 +896,13 @@ body {
     grid-row-gap: 0;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 1 / 2 / 2 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 .S-TILEROW-slot_3 {
-    grid-area: 1/3/2/4;
+    grid-area: 1 / 3 / 2 / 4;
   }
 }
 @media screen and (max-aspect-ratio: 1.6666666667) and (min-aspect-ratio: 1.0526315789) {
@@ -1167,16 +1331,16 @@ body {
     max-width: 100vh;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-web {
-    grid-area: 0.25;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-design {
-    grid-area: 0.3333333333;
+    grid-area: 2 / 1 / 3 / 2;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-3d {
-    grid-area: 0.375;
+    grid-area: 3 / 1 / 4 / 2;
   }
   .S-SHOWCASE-carcass .S-SKILLS-carcass .S-SKILLS-languages {
-    grid-area: 0.4;
+    grid-area: 4 / 1 / 5 / 2;
   }
   .S-TAGS-tag {
     width: max-content;
@@ -1223,17 +1387,164 @@ body {
   .S-PROJECTS-carcass > :not(:last-child) {
     margin-bottom: 3vh;
   }
+  .S-PROJECTS-carcass .S-TILEROW-tile {
+    border-radius: 2.5vh;
+    display: flex;
+    transition: box-shadow 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile:hover {
+    box-shadow: 0 0 0 1.5vh #2B2B2B;
+    border-radius: 2.5vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile .S-TILE-wrapper {
+    display: flex;
+    flex: 1;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile .S-TILE-wrapper .S-TILE-carcass {
+    display: flex;
+    flex: 1;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-tile .S-TILE-wrapper .S-TILE-carcass .S-TILE-all {
+    display: flex;
+    flex: 1;
+  }
   .S-PROJECTS-carcass .S-TILEROW-carcass {
     margin: 0 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all {
     display: flex;
     justify-content: center;
-    align-items: center;
   }
-  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all img {
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image {
+    grid-area: 1/1/2/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 2.5vh 2.5vh;
+    overflow: clip;
+    position: relative;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link {
+    display: flex;
     width: 100%;
-    border-radius: 2.5vh;
+    text-decoration: none;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link:hover .I-IMAGE-image {
+    filter: brightness(0.8);
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link:hover .S-ALL-image_hover {
+    opacity: 1;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image .L-IMAGE-link .I-IMAGE-image {
+    transition: filter 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image_hover .T-IMAGE-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.1252813203vh;
+    color: #ffffff;
+    text-shadow: 0 0 8vh #000000;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-image_hover .T-IMAGE-text .I-IMAGE-icon {
+    height: 3.575vh;
+    padding-bottom: 0.572vh;
+    fill: #ffffff;
+    transition: filter 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info {
+    grid-area: 2/1/3/2;
+    display: flex;
+    flex-direction: column;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text {
+    padding: 3vh 3vh 0 3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.1252813203vh;
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link:hover {
+    color: #B6B6B6;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link:hover .I-INFO-icon {
+    filter: brightness(72%);
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link .I-INFO-icon {
+    height: 3.575vh;
+    padding-bottom: 0.858vh;
+    fill: #B6B6B6;
+    transition: filter 0.2s;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1252813203vh;
+    padding: 1.1252813203vh 3vh 3vh 3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-100 {
+    grid-template-rows: 60vh max-content;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-100 .S-ALL-image_100 {
+    height: 60vh;
+    width: calc(100vw - 6vh - 0.6vh);
+    margin: 0.3vh 0.3vh 0 0.3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-100 .I-IMAGE-image {
+    width: 100%;
+    height: 60vh;
+    border-radius: 1.6666666667vh;
+    object-fit: cover;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-50 {
+    grid-template-rows: 60vh 60vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-50 .S-ALL-image_50 {
+    height: 60vh;
+    width: calc(100vw - 6vh - 0.6vh);
+    margin: 0.3vh 0.3vh 0 0.3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-50 .I-IMAGE-image {
+    width: 100%;
+    height: 60vh;
+    border-radius: 1.6666666667vh;
+    object-fit: cover;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-25 {
+    grid-template-rows: 50vh max-content;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-25 .S-ALL-image_25 {
+    height: 50vh;
+    width: calc((100vw - 6vh - 3vh) / 2 - 0.6vh);
+    margin: 0.3vh 0.3vh 0 0.3vh;
+  }
+  .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-25 .I-IMAGE-image {
+    width: 100%;
+    height: 50vh;
+    border-radius: 1.6666666667vh;
+    object-fit: cover;
   }
   .S-PROJECTS-carcass .S-TILEROW-100 {
     display: grid;
@@ -1247,64 +1558,64 @@ body {
   }
   .S-PROJECTS-carcass .S-TILEROW-50_50 {
     display: grid;
-    grid-template-columns: repeat(2, calc((100vw - 6vh - 3vh) / 2));
-    grid-template-rows: 1fr;
-    grid-column-gap: 3vh;
-    grid-row-gap: 0;
+    grid-template-columns: calc(100vw - 6vh);
+    grid-template-rows: repeat(2, max-content);
+    grid-column-gap: 0;
+    grid-row-gap: 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_50 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_50 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 2 / 1 / 3 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 {
     display: grid;
-    grid-template-columns: calc((100vw - 6vh - 3vh) / 2) repeat(2, calc(((100vw - 6vh - 3vh) / 2 - 3vh) / 2));
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, calc((100vw - 6vh - 3vh) / 2));
+    grid-template-rows: repeat(2, max-content);
     grid-column-gap: 3vh;
-    grid-row-gap: 0;
+    grid-row-gap: 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 1 / 1 / 2 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 2 / 1 / 3 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-50_25_25 .S-TILEROW-slot_3 {
-    grid-area: 1/3/2/4;
+    grid-area: 2 / 2 / 3 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 {
     display: grid;
-    grid-template-columns: calc(((100vw - 6vh - 3vh) / 2 - 3vh) / 2) calc((100vw - 6vh - 3vh) / 2) calc(((100vw - 6vh - 3vh) / 2 - 3vh) / 2);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, calc((100vw - 6vh - 3vh) / 2));
+    grid-template-rows: repeat(2, max-content);
     grid-column-gap: 3vh;
-    grid-row-gap: 0;
+    grid-row-gap: 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 2 / 1 / 3 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 1 / 1 / 2 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_50_25 .S-TILEROW-slot_3 {
-    grid-area: 1/3/2/4;
+    grid-area: 2 / 2 / 3 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 {
     display: grid;
-    grid-template-columns: repeat(2, calc(((100vw - 6vh - 3vh) / 2 - 3vh) / 2)) calc((100vw - 6vh - 3vh) / 2);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, calc((100vw - 6vh - 3vh) / 2));
+    grid-template-rows: repeat(2, max-content);
     grid-column-gap: 3vh;
-    grid-row-gap: 0;
+    grid-row-gap: 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 .S-TILEROW-slot_1 {
-    grid-area: 1/1/2/2;
+    grid-area: 1 / 1 / 2 / 2;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 .S-TILEROW-slot_2 {
-    grid-area: 1/2/2/3;
+    grid-area: 1 / 2 / 2 / 3;
   }
   .S-PROJECTS-carcass .S-TILEROW-25_25_50 .S-TILEROW-slot_3 {
-    grid-area: 1/3/2/4;
+    grid-area: 2 / 1 / 3 / 3;
   }
 }
 @media screen and (min-aspect-ratio: 1.6666666667) and (hover: none) and (pointer: coarse) {

@@ -341,6 +341,16 @@
                     color-mix(in oklab, $PALETTE-SH1FT 100%, $PALETTE-GLASS) 25%,
                     $PALETTE-GLASS 92%
             ) no-repeat;
+        //background:
+        //    radial-gradient(
+        //            circle at 50% -50%,
+        //            rgba($PALETTE-VOID, 1) 35%,
+        //            rgba($PALETTE-SH1FT, 0.5) 66%,
+        //            rgba($PALETTE-SH1FT, 1) 76%,
+        //            rgba($PALETTE-SH1FT, 0.5) 86%,
+        //            rgba($PALETTE-VOID, 1) 100%
+        //    ) no-repeat;
+
 
         .S-FRONT-background {
             //  CSS-GRID CONFIGURATION
@@ -776,15 +786,80 @@
 
     //  CHUNK:COMPONENT-TILEROW
     //  LOCAL VARIABLES NAME = COMPONENT-TILEROW
-    $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT: calc(100vw - $GV-D-DISTANCE-MEDIUM * 2);
-    $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT: calc(($LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT - $GV-D-DISTANCE-MEDIUM) / 2);
-    $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT: calc(($LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT - $GV-D-DISTANCE-MEDIUM) / 2);
+    $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_100: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_100);
+    $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_50: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_50);
+    $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_25: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_25);
+
+    $LV-D-COMPONENT-TILEROW-TILE-50-IMAGE_WIDTH: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-TILE-50-IMAGE_WIDTH);
+    $LV-D-COMPONENT-TILEROW-TILE-25-IMAGE_WIDTH: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-TILE-25-IMAGE_WIDTH);
+
+    $LV-D-COMPONENT-TILEROW-50_50-TEMPLATE_COLUMNS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_50-TEMPLATE_COLUMNS);
+    $LV-D-COMPONENT-TILEROW-50_50-TEMPLATE_ROWS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_50-TEMPLATE_ROWS);
+    $LV-D-COMPONENT-TILEROW-50_50-COLUMN_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_50-COLUMN_GAP);
+    $LV-D-COMPONENT-TILEROW-50_50-ROW_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_50-ROW_GAP);
+    $LV-D-COMPONENT-TILEROW-50_50-AREA_SLOT_1: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_50-AREA_SLOT_1);
+    $LV-D-COMPONENT-TILEROW-50_50-AREA_SLOT_2: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_50-AREA_SLOT_2);
+
+    $LV-D-COMPONENT-TILEROW-50_25_25-TEMPLATE_COLUMNS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_25_25-TEMPLATE_COLUMNS);
+    $LV-D-COMPONENT-TILEROW-50_25_25-TEMPLATE_ROWS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_25_25-TEMPLATE_ROWS);
+    $LV-D-COMPONENT-TILEROW-50_25_25-COLUMN_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_25_25-COLUMN_GAP);
+    $LV-D-COMPONENT-TILEROW-50_25_25-ROW_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_25_25-ROW_GAP);
+    $LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_1: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_1);
+    $LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_2: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_2);
+    $LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_3: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_3);
+
+    $LV-D-COMPONENT-TILEROW-25_50_25-TEMPLATE_COLUMNS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_50_25-TEMPLATE_COLUMNS);
+    $LV-D-COMPONENT-TILEROW-25_50_25-TEMPLATE_ROWS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_50_25-TEMPLATE_ROWS);
+    $LV-D-COMPONENT-TILEROW-25_50_25-COLUMN_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_50_25-COLUMN_GAP);
+    $LV-D-COMPONENT-TILEROW-25_50_25-ROW_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_50_25-ROW_GAP);
+    $LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_1: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_1);
+    $LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_2: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_2);
+    $LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_3: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_3);
+
+    $LV-D-COMPONENT-TILEROW-25_25_50-TEMPLATE_COLUMNS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_25_50-TEMPLATE_COLUMNS);
+    $LV-D-COMPONENT-TILEROW-25_25_50-TEMPLATE_ROWS: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_25_50-TEMPLATE_ROWS);
+    $LV-D-COMPONENT-TILEROW-25_25_50-COLUMN_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_25_50-COLUMN_GAP);
+    $LV-D-COMPONENT-TILEROW-25_25_50-ROW_GAP: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_25_50-ROW_GAP);
+    $LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_1: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_1);
+    $LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_2: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_2);
+    $LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_3: map-get($MODE_VALUES, LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_3);
     .S-PROJECTS-carcass {
         > :not(:last-child) {
             //  MARGINS & PADDINGS
             margin-bottom: $GV-D-DISTANCE-MEDIUM;
         }
 
+        .S-TILEROW-tile {
+            //  BORDER
+            border-radius: $GV-D-BORDER_RADIUS-NORMAL;
+            //  FLEXBOX
+            display: flex;
+            //  TRANSITION
+            transition: box-shadow 0.2s;
+
+            &:hover {
+                box-shadow: 0 0 0 $GV-D-DISTANCE-MEDIUM / 2 $PALETTE-GRAPHITE;
+                border-radius: $GV-D-BORDER_RADIUS-NORMAL;
+            }
+
+            .S-TILE-wrapper {
+                //  FLEXBOX
+                display: flex;
+                flex: 1;
+
+                .S-TILE-carcass {
+                    //  FLEXBOX
+                    display: flex;
+                    flex: 1;
+
+                    .S-TILE-all {
+                        //  FLEXBOX
+                        display: flex;
+                        flex: 1;
+                    }
+                }
+            }
+        }
         .S-TILEROW-carcass {
             //  MARGINS & PADDINGS
             margin: 0 $GV-D-DISTANCE-MEDIUM;
@@ -793,89 +868,306 @@
                 //  FLEXBOX
                 display: flex;
                 justify-content: center;
-                align-items: center;
 
-                img {
+                .S-ALL-carcass {
+                    //  CSS-GRID SETUP
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    //  grid-template-columns is configured individually for each tile type.
+                    grid-column-gap: 0;
+                    grid-row-gap: 0;
+
+                    .S-ALL-image {
+                        // CSS-GRID CONFIGURATION
+                        grid-area: 1 / 1 / 2 / 2;
+                        // FLEXBOX
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // BORDER
+                        border-radius: 0 0 $GV-D-BORDER_RADIUS-NORMAL $GV-D-BORDER_RADIUS-NORMAL;
+                        // OVERFLOW
+                        overflow: clip;
+                        // POSITION
+                        position: relative;
+
+                        .L-IMAGE-link {
+                            //  FLEXBOX
+                            display: flex;
+                            //  SCALING
+                            width: 100%;
+                            //  LINK SETTINGS
+                            text-decoration: none;
+
+                            &:hover {
+                                .I-IMAGE-image {
+                                    //  FILTER
+                                    filter: brightness(0.8);
+                                }
+
+                                .S-ALL-image_hover {
+                                    // OPACITY
+                                    opacity: 1;
+                                }
+                            }
+
+                            .I-IMAGE-image {
+                                //  TRANSITION
+                                transition: filter 0.2s;
+                            }
+                        }
+                    }
+                    .S-ALL-image_hover {
+                        // POSITIONING
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        // FLEXBOX
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // INTERACTIONS
+                        pointer-events: none;
+                        // OPACITY
+                        opacity: 0;
+                        //  TRANSITION
+                        transition: opacity 0.2s;
+
+                        .T-IMAGE-text {
+                            //  FLEXBOX
+                            display: inline-flex;
+                            align-items: center;
+                            gap: $GV-D-DISTANCE-MICRO;
+                            //  FONT SETTINGS
+                            color: $PALETTE-SNOW;
+                            //  SHADOW
+                            text-shadow: 0 0 8vh $PALETTE-VOID;
+
+                            .I-IMAGE-icon {
+                                //  SCALING
+                                height: $GV-D-FONT_SIZES-H5 / 1.2;
+                                //  MARGINS & PADDINGS
+                                padding-bottom: $GV-D-FONT_SIZES-H5 / 7.5;
+                                //  FILL
+                                fill: $PALETTE-SNOW;
+                                //  TRANSITION
+                                transition: filter 0.2s;
+                            }
+                        }
+                    }
+                    .S-ALL-info {
+                        //  CSS-GRID CONFIGURATION
+                        grid-area: 2 / 1 / 3 / 2;
+                        //  FLEXBOX
+                        display: flex;
+                        flex-direction: column;
+
+                        .S-INFO-text {
+                            //  MARGINS & PADDINGS
+                            padding: $GV-D-DISTANCE-MEDIUM $GV-D-DISTANCE-MEDIUM 0 $GV-D-DISTANCE-MEDIUM;
+
+                            .L-INFO-link {
+                                //  FLEXBOX
+                                display: inline-flex;
+                                align-items: center;
+                                gap: $GV-D-DISTANCE-MICRO;
+                                //  LINK SETTINGS
+                                text-decoration: none;
+                                //  FONT SETTINGS
+                                color: $PALETTE-SNOW;
+                                //  TRANSITION
+                                transition: color 0.2s;
+
+                                &:hover {
+                                    //  FONT SETTINGS
+                                    color: $PALETTE-ASH;
+
+                                    .I-INFO-icon {
+                                        //  FILTER
+                                        filter: brightness(72%);
+                                    }
+                                }
+
+                                .I-INFO-icon {
+                                    //  SCALING
+                                    height: $GV-D-FONT_SIZES-H5 / 1.2;
+                                    //  MARGINS & PADDINGS
+                                    padding-bottom: $GV-D-FONT_SIZES-H5 / 5;
+                                    //  FILL
+                                    fill: $PALETTE-ASH;
+                                    //  TRANSITION
+                                    transition: filter 0.2s;
+                                }
+                            }
+                        }
+                        .S-INFO-tags {
+                            //  FLEXBOX
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: $GV-D-DISTANCE-MICRO;
+                            //  MARGINS & PADDINGS
+                            padding: $GV-D-DISTANCE-MICRO $GV-D-DISTANCE-MEDIUM $GV-D-DISTANCE-MEDIUM $GV-D-DISTANCE-MEDIUM;
+                        }
+                    }
+                }
+            }
+            .S-TILE-100 {
+                //  CSS-GRID SETUP
+                grid-template-rows: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_100 max-content;
+
+                .S-ALL-image_100 {
+                    //  SCALING
+                    height: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_100;
+                    width: calc($GV-D-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT - $GV-D-BORDER_WIDTH * 2);
+                    //  MARGINS & PADDINGS
+                    margin: $GV-D-BORDER_WIDTH $GV-D-BORDER_WIDTH 0 $GV-D-BORDER_WIDTH;
+                }
+                .I-IMAGE-image {
+                    //  SCALING
                     width: 100%;
+                    height: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_100;
                     //  BORDER
-                    border-radius: $GV-D-BORDER_RADIUS-NORMAL;
+                    border-radius: $GV-D-BORDER_RADIUS-NORMAL / 1.5;
+                    //  POSITIONING
+                    object-fit: cover;
+                }
+            }
+            .S-TILE-50 {
+                //  CSS-GRID SETUP
+                grid-template-rows: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_50 $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_50;
+
+                .S-ALL-image_50 {
+                    //  SCALING
+                    height: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_50;
+                    width: $LV-D-COMPONENT-TILEROW-TILE-50-IMAGE_WIDTH;
+                    //  MARGINS & PADDINGS
+                    margin: $GV-D-BORDER_WIDTH $GV-D-BORDER_WIDTH 0 $GV-D-BORDER_WIDTH;
+                }
+                .I-IMAGE-image {
+                    //  SCALING
+                    width: 100%;
+                    height: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_50;
+                    //  BORDER
+                    border-radius: $GV-D-BORDER_RADIUS-NORMAL / 1.5;
+                    //  POSITIONING
+                    object-fit: cover;
+                }
+            }
+            .S-TILE-25 {
+                //  CSS-GRID SETUP
+                grid-template-rows: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_25 max-content;
+
+                .S-ALL-image_25 {
+                    //  SCALING
+                    height: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_25;
+                    width: $LV-D-COMPONENT-TILEROW-TILE-25-IMAGE_WIDTH;
+                    //  MARGINS & PADDINGS
+                    margin: $GV-D-BORDER_WIDTH $GV-D-BORDER_WIDTH 0 $GV-D-BORDER_WIDTH;
+                }
+                .I-IMAGE-image {
+                    //  SCALING
+                    width: 100%;
+                    height: $LV-D-COMPONENT-TILEROW-HEIGHT_FOR_IMAGE_25;
+                    //  BORDER
+                    border-radius: $GV-D-BORDER_RADIUS-NORMAL / 1.5;
+                    //  POSITIONING
+                    object-fit: cover;
                 }
             }
         }
         .S-TILEROW-100 {
+            //  CSS-GRID SETUP
             display: grid;
-            grid-template-columns: $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT;
+            grid-template-columns: $GV-D-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_SINGLE_SLOT;
             grid-template-rows: 1fr;
             grid-column-gap: 0;
             grid-row-gap: 0;
 
             .S-TILEROW-slot_1 {
+                //  CSS-GRID CONFIGURATION
                 grid-area: 1 / 1 / 2 / 2;
             }
         }
         .S-TILEROW-50_50 {
+            //  CSS-GRID SETUP
             display: grid;
-            grid-template-columns: repeat(2, $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT);
-            grid-template-rows: 1fr;
-            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
-            grid-row-gap: 0;
+            grid-template-columns: $LV-D-COMPONENT-TILEROW-50_50-TEMPLATE_COLUMNS;
+            grid-template-rows: $LV-D-COMPONENT-TILEROW-50_50-TEMPLATE_ROWS;
+            grid-column-gap: $LV-D-COMPONENT-TILEROW-50_50-COLUMN_GAP;
+            grid-row-gap: $LV-D-COMPONENT-TILEROW-50_50-ROW_GAP;
 
             .S-TILEROW-slot_1 {
-                grid-area: 1 / 1 / 2 / 2;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-50_50-AREA_SLOT_1;
             }
             .S-TILEROW-slot_2 {
-                grid-area: 1 / 2 / 2 / 3;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-50_50-AREA_SLOT_2;
             }
         }
         .S-TILEROW-50_25_25 {
+            //  CSS-GRID SETUP
             display: grid;
-            grid-template-columns: $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT repeat(2, $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT);
-            grid-template-rows: 1fr;
-            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
-            grid-row-gap: 0;
+            grid-template-columns: $LV-D-COMPONENT-TILEROW-50_25_25-TEMPLATE_COLUMNS;
+            grid-template-rows: $LV-D-COMPONENT-TILEROW-50_25_25-TEMPLATE_ROWS;
+            grid-column-gap: $LV-D-COMPONENT-TILEROW-50_25_25-COLUMN_GAP;
+            grid-row-gap: $LV-D-COMPONENT-TILEROW-50_25_25-ROW_GAP;
 
             .S-TILEROW-slot_1 {
-                grid-area: 1 / 1 / 2 / 2;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_1;
             }
             .S-TILEROW-slot_2 {
-                grid-area: 1 / 2 / 2 / 3;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_2;
             }
             .S-TILEROW-slot_3 {
-                grid-area: 1 / 3 / 2 / 4;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-50_25_25-AREA_SLOT_3;
             }
         }
         .S-TILEROW-25_50_25 {
+            //  CSS-GRID SETUP
             display: grid;
-            grid-template-columns: $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT;
-            grid-template-rows: 1fr;
-            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
-            grid-row-gap: 0;
+            grid-template-columns: $LV-D-COMPONENT-TILEROW-25_50_25-TEMPLATE_COLUMNS;
+            grid-template-rows: $LV-D-COMPONENT-TILEROW-25_50_25-TEMPLATE_ROWS;
+            grid-column-gap: $LV-D-COMPONENT-TILEROW-25_50_25-COLUMN_GAP;
+            grid-row-gap: $LV-D-COMPONENT-TILEROW-25_50_25-ROW_GAP;
 
             .S-TILEROW-slot_1 {
-                grid-area: 1 / 1 / 2 / 2;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_1;
             }
             .S-TILEROW-slot_2 {
-                grid-area: 1 / 2 / 2 / 3;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_2;
             }
             .S-TILEROW-slot_3 {
-                grid-area: 1 / 3 / 2 / 4;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-25_50_25-AREA_SLOT_3;
             }
         }
         .S-TILEROW-25_25_50 {
+            //  CSS-GRID SETUP
             display: grid;
-            grid-template-columns: repeat(2, $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_TRIPLE_SLOT) $LV-COMPONENT-TILEROW-AVAILABLE_WIDTH_FOR_DOUBLE_SLOT;
-            grid-template-rows: 1fr;
-            grid-column-gap: $GV-D-DISTANCE-MEDIUM;
-            grid-row-gap: 0;
+            grid-template-columns: $LV-D-COMPONENT-TILEROW-25_25_50-TEMPLATE_COLUMNS;
+            grid-template-rows: $LV-D-COMPONENT-TILEROW-25_25_50-TEMPLATE_ROWS;
+            grid-column-gap: $LV-D-COMPONENT-TILEROW-25_25_50-COLUMN_GAP;
+            grid-row-gap: $LV-D-COMPONENT-TILEROW-25_25_50-ROW_GAP;
 
             .S-TILEROW-slot_1 {
-                grid-area: 1 / 1 / 2 / 2;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_1;
             }
             .S-TILEROW-slot_2 {
-                grid-area: 1 / 2 / 2 / 3;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_2;
             }
             .S-TILEROW-slot_3 {
-                grid-area: 1 / 3 / 2 / 4;
+                //  CSS-GRID CONFIGURATION
+                grid-area: $LV-D-COMPONENT-TILEROW-25_25_50-AREA_SLOT_3;
             }
         }
     }

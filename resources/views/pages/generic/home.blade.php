@@ -144,13 +144,17 @@
                                         <div class="S-TILEROW-wrapper">
                                             <div class="S-TILEROW-carcass S-TILEROW-100">
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_1">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-100 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                <img src="{{ asset("/images/art/citadel/preview.jpg") }}">
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile100
+                                                        project-url="leee"
+                                                        project-name='«Citadel» — Карта для Counter-Strike 2'
+                                                        project-image="/images/art/citadel/preview.jpg"
+                                                        project-image-alt="citadel"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                        <x-blades.tags.3d.substance_designer/>
+                                                        <x-blades.tags.3d.substance_painter/>
+                                                        <x-blades.tags.3d.source_2/>
+                                                    </x-blades.projects.tile100>
                                                 </div>
                                             </div>
                                         </div>
@@ -159,22 +163,28 @@
                                         <div class="S-TILEROW-wrapper">
                                             <div class="S-TILEROW-carcass S-TILEROW-50_50">
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_1">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-50 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 50
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile50
+                                                        project-url="leee"
+                                                        project-name="Cocofe"
+                                                        project-image="/images/art/frontman/2.jpg"
+                                                        project-image-alt="cocofe"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                        <x-blades.tags.3d.substance_designer/>
+                                                        <x-blades.tags.3d.substance_painter/>
+                                                    </x-blades.projects.tile50>
                                                 </div>
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_2">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-50 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 50
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile50
+                                                        project-url="leee"
+                                                        project-name="Cocofe"
+                                                        project-image="/images/art/frontman/2.jpg"
+                                                        project-image-alt="cocofe"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                        <x-blades.tags.3d.substance_designer/>
+                                                        <x-blades.tags.3d.substance_painter/>
+                                                    </x-blades.projects.tile50>
                                                 </div>
                                             </div>
                                         </div>
@@ -183,31 +193,36 @@
                                         <div class="S-TILEROW-wrapper">
                                             <div class="S-TILEROW-carcass S-TILEROW-50_25_25">
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_1">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-50 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 50
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile50
+                                                        project-url="leee"
+                                                        project-name="Cocofe"
+                                                        project-image="/images/art/frontman/2.jpg"
+                                                        project-image-alt="cocofe"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                        <x-blades.tags.3d.substance_designer/>
+                                                        <x-blades.tags.3d.substance_painter/>
+                                                    </x-blades.projects.tile50>
                                                 </div>
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_2">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-25 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 25
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile25
+                                                        project-url="leee"
+                                                        project-name="Bilender"
+                                                        project-image="/images/art/frontman/1.jpg"
+                                                        project-image-alt="bilyaaa"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                    </x-blades.projects.tile25>
                                                 </div>
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_3">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-25 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 25
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile25
+                                                        project-url="leee"
+                                                        project-name="Bilender"
+                                                        project-image="/images/art/frontman/1.jpg"
+                                                        project-image-alt="bilyaaa"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                    </x-blades.projects.tile25>
                                                 </div>
                                             </div>
                                         </div>
@@ -216,31 +231,36 @@
                                         <div class="S-TILEROW-wrapper">
                                             <div class="S-TILEROW-carcass S-TILEROW-25_50_25">
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_1">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-25 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 25
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile25
+                                                        project-url="leee"
+                                                        project-name="Bilender"
+                                                        project-image="/images/art/frontman/1.jpg"
+                                                        project-image-alt="bilyaaa"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                    </x-blades.projects.tile25>
                                                 </div>
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_2">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-50 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 50
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile50
+                                                        project-url="leee"
+                                                        project-name="Cocofe"
+                                                        project-image="/images/art/frontman/2.jpg"
+                                                        project-image-alt="cocofe"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                        <x-blades.tags.3d.substance_designer/>
+                                                        <x-blades.tags.3d.substance_painter/>
+                                                    </x-blades.projects.tile50>
                                                 </div>
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_3">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-25 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 25
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile25
+                                                        project-url="leee"
+                                                        project-name="Bilender"
+                                                        project-image="/images/art/frontman/1.jpg"
+                                                        project-image-alt="bilyaaa"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                    </x-blades.projects.tile25>
                                                 </div>
                                             </div>
                                         </div>
@@ -249,38 +269,40 @@
                                         <div class="S-TILEROW-wrapper">
                                             <div class="S-TILEROW-carcass S-TILEROW-25_25_50">
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_1">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-25 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 25
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile25
+                                                        project-url="leee"
+                                                        project-name="Bilender"
+                                                        project-image="/images/art/frontman/1.jpg"
+                                                        project-image-alt="bilyaaa"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                    </x-blades.projects.tile25>
                                                 </div>
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_2">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-25 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 25
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile25
+                                                        project-url="leee"
+                                                        project-name="Bilender"
+                                                        project-image="/images/art/frontman/1.jpg"
+                                                        project-image-alt="bilyaaa"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                    </x-blades.projects.tile25>
                                                 </div>
                                                 <div class="S-TILEROW-tile S-TILEROW-slot_3">
-                                                    <div class="S-TILE-wrapper">
-                                                        <div class="S-TILE-carcass">
-                                                            <div class="S-TILE-50 S-TILE-all PRESET-BG-SOFT_TOUCH">
-                                                                TILE 50
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <x-blades.projects.tile50
+                                                        project-url="leee"
+                                                        project-name="Cocofe"
+                                                        project-image="/images/art/frontman/2.jpg"
+                                                        project-image-alt="cocofe"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                        <x-blades.tags.3d.substance_designer/>
+                                                        <x-blades.tags.3d.substance_painter/>
+                                                    </x-blades.projects.tile50>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </div>

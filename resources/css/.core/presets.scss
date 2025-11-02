@@ -5,53 +5,54 @@ $PRESET-BG-SOFT_TOUCH-BG:
 .PRESET-BG-SOFT_TOUCH {
     //  BACKGROUND
     background: $PRESET-BG-SOFT_TOUCH-BG;
-    //  BORDER
-    border: $GV-D-BORDER_WIDTH solid transparent;
     border-radius: $GV-D-BORDER_RADIUS-NORMAL;
     //  TRANSITION
     transition: filter 0.2s;
-    //  FILTER
-    filter: brightness(100%);
     //  POSITIONING
     position: relative;
     //  ISOLATION
     isolation: isolate;
 
-    &::before {
-        //  BEFORE
+
+    //  ВНУТРЕННЯЯ ГРАНИЦА через ::after
+    &::after {
         content: '';
-        //  POSITIONING
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        //  BACKGROUND
-        background: inherit;
-        //  BORDER
         border-radius: inherit;
-        //  Z-INDEX
+        padding: $GV-D-BORDER_WIDTH;
+        background: linear-gradient(180deg, $PALETTE-SLATE, $PALETTE-MIDNIGHT);
+        mask:
+            linear-gradient(#fff, #fff) content-box,
+            linear-gradient(#fff, #fff);
+        mask-composite: subtract;
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        border-radius: inherit;
         z-index: -1;
-        //  TRANSITION
         transition: filter 0.2s;
-        //  FILTER
         filter: brightness(100%);
     }
 
     &:hover::before {
-        //  FILTER
         filter: brightness(85%);
     }
 
-    //  PLACE CHILDREN ABOVE PARENT
     & > * {
-        //  POSITIONING
         position: relative;
-        //  Z-INDEX
         z-index: 1;
     }
 }
-
-
-
-//
