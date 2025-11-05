@@ -8,7 +8,7 @@
 @section('mode-desktop')
     <div class="S-HOME-wrapper">
         <div class="S-HOME-carcass">
-            <div class="S-HOME-front DEV-DISABLE_SELECTION">
+            <div class="S-HOME-front">
                 <div class="S-FRONT-wrapper">
                     <div class="S-FRONT-carcass">
                         <div class="S-FRONT-background">
@@ -30,7 +30,7 @@
                                             </span>
                                         </p>
                                     </div>
-                                    <div class="S-CONTENT-buttons">
+                                    <div class="S-CONTENT-buttons DEV-DISABLE_SELECTION">
                                         <x-blades.buttons.medium
                                             href="/web"
                                             title="веб-разработка"
@@ -48,7 +48,7 @@
                                             title="обо мне"
                                         />
                                     </div>
-                                    <div class="S-CONTENT-shortcuts">
+                                    <div class="S-CONTENT-shortcuts DEV-DISABLE_SELECTION">
                                         <a class="L-SHORTCUT-link TYPO-WEIGHT-MEDIUM TYPO-OBLIQUE-NONE TYPO-D-SIZES-NORMAL TYPO-VARIABLE" href="/fwaeh">Резюме</a>
                                         <a class="L-SHORTCUT-icon" href="https://t.me/sh1ft_yt" target="_blank" rel="noopener noreferrer">
                                             <svg class="I-SHORTCUT-all I-SHORTCUT-icon_telegram" viewBox="0 0 33 28" xmlns="http://www.w3.org/2000/svg">
@@ -303,11 +303,48 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="S-PROJECTS-tilerow">
+                                        <div class="S-TILEROW-wrapper">
+                                            <div class="S-TILEROW-carcass S-TILEROW-100">
+                                                <div class="S-TILEROW-tile S-TILEROW-slot_1">
+                                                    <x-blades.projects.tile100
+                                                        project-url="leee"
+                                                        project-name='«Citadel» — Карта для Counter-Strike 2'
+                                                        project-image="/images/art/citadel/preview.jpg"
+                                                        project-image-alt="citadel"
+                                                    >
+                                                        <x-blades.tags.3d.blender/>
+                                                        <x-blades.tags.3d.substance_designer/>
+                                                        <x-blades.tags.3d.substance_painter/>
+                                                        <x-blades.tags.3d.source_2/>
+                                                    </x-blades.projects.tile100>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="S-SHOWCASE-conclusion">
-
+                    </div>
+                </div>
+            </div>
+            <div class="S-HOME-conclusion DEV-DISABLE_SELECTION">
+                <div class="S-CONCLUSION-wrapper">
+                    <div class="S-CONCLUSION-carcass">
+                        <div class="S-CONCLUSION-action">
+                            <p class="T-CONCLUSION-title TYPO-WEIGHT-EXTRABOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-H1 TYPO-VARIABLE">
+                                {{ $lkey["home_conclusion_h1"][$locale] }}
+                            </p>
+                            @php
+                                $lkey_home_conclusion_button = $lkey["home_conclusion_button"][$locale];
+                            @endphp
+                            <x-blades.buttons.big
+                                href="/web"
+                                title="{{$lkey_home_conclusion_button}}"
+                            />
+                        </div>
+                        <div class="S-CONCLUSION-artworks">
+                            <img class="I-CONCLUSION-artworks" src="{{ asset("/images/home/artworks.png") }}" draggable="false">
                         </div>
                     </div>
                 </div>
@@ -315,7 +352,7 @@
             <div class="S-HOME-footer">
                 <div class="S-FOOTER-wrapper">
                     <div class="S-FOOTER-carcass">
-                        <p>{{ $AE_Country }}</p>
+
                     </div>
                 </div>
             </div>

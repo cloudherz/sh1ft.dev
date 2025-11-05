@@ -1,6 +1,6 @@
-<a class="COMPONENT-MEDIUM_BUTTON L-BUTTON-link" href="{{ $href }}">
+<a class="COMPONENT-BIG_BUTTON L-BUTTON-link" href="{{ $href }}">
     <div class="S-BUTTON-frame">
-        <p class="T-BUTTON-title TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-NORMAL TYPO-VARIABLE">
+        <p class="T-BUTTON-title TYPO-WEIGHT-SEMIBOLD TYPO-OBLIQUE-NONE TYPO-D-SIZES-H4 TYPO-VARIABLE">
             {!! $title !!}
         </p>
         <svg class="I-BUTTON-arrow" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
