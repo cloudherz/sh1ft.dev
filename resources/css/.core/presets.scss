@@ -56,3 +56,35 @@ $PRESET-BG-SOFT_TOUCH-BG:
         z-index: 1;
     }
 }
+
+.PRESET-BG-TRANSPARENT {
+    background: transparent !important;
+}
+
+.PRESET-LINK-UNDERLINED_NORMAL {
+    //  LINK SETTINGS
+    text-decoration: underline;
+    text-underline-offset: 0.4vh;
+    text-decoration-thickness: 0.25vh;
+    //  TRANSITION
+    //transition: text-underline-offset 0.15s;
+
+    &:hover {
+        //  LINK SETTINGS
+        text-underline-offset: 0.7vh;
+    }
+}
+
+.PRESET-LINK-UNDERLINED_SMALL {
+    //  LINK SETTINGS
+    text-decoration: underline;
+    text-underline-offset: 0.2vh;
+    text-decoration-thickness: 0.25vh;
+    //  TRANSITION
+    //transition: text-underline-offset 0.15s;
+
+    &:hover {
+        //  LINK SETTINGS
+        text-underline-offset: 0.4vh;
+    }
+}

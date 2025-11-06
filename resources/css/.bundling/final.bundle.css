@@ -82,6 +82,28 @@ body {
   z-index: 1;
 }
 
+.PRESET-BG-TRANSPARENT {
+  background: transparent !important;
+}
+
+.PRESET-LINK-UNDERLINED_NORMAL {
+  text-decoration: underline;
+  text-underline-offset: 0.4vh;
+  text-decoration-thickness: 0.25vh;
+}
+.PRESET-LINK-UNDERLINED_NORMAL:hover {
+  text-underline-offset: 0.7vh;
+}
+
+.PRESET-LINK-UNDERLINED_SMALL {
+  text-decoration: underline;
+  text-underline-offset: 0.2vh;
+  text-decoration-thickness: 0.25vh;
+}
+.PRESET-LINK-UNDERLINED_SMALL:hover {
+  text-underline-offset: 0.4vh;
+}
+
 :root {
   --wght-thin: 100;
   --wght-extralight: 148;
@@ -476,15 +498,11 @@ body {
     margin-right: 2.2505626407vh;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link {
-    text-decoration: underline;
-    text-underline-offset: 0.4vh;
-    text-decoration-thickness: 0.25vh;
     color: #ffffff;
     margin-right: 2.2505626407vh;
     transition: color 0.2s, text-underline-offset 0.15s;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link:hover {
-    text-underline-offset: 0.7vh;
     color: #5842FF;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon {
@@ -527,7 +545,7 @@ body {
     height: 100vh;
     border-top: 0.3vh solid #414141;
     border-bottom: 0.3vh solid #414141;
-    background: radial-gradient(circle at 50% 120%, black 0%, rgba(88, 66, 255, 0.5) 49.5%, #5842ff 66.5%, rgba(88, 66, 255, 0.5) 83.5%, black 100%) no-repeat;
+    background: radial-gradient(circle at 50% 110%, black 0%, rgba(88, 66, 255, 0.5) 47%, #5842ff 66.5%, rgba(88, 66, 255, 0.5) 86%, black 100%) no-repeat;
   }
   .S-CONCLUSION-carcass .S-CONCLUSION-action {
     grid-area: 1/1/2/2;
@@ -538,7 +556,7 @@ body {
   }
   .S-CONCLUSION-carcass .S-CONCLUSION-action .T-CONCLUSION-title {
     text-align: center;
-    margin-bottom: 1.1252813203vh;
+    margin-bottom: 1.875vh;
   }
   .S-CONCLUSION-carcass .S-CONCLUSION-artworks {
     grid-area: 2/1/3/2;
@@ -701,7 +719,7 @@ body {
     padding: 3vh 3vh 0 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 1.1252813203vh;
     text-decoration: none;
@@ -984,6 +1002,190 @@ body {
   .COMPONENT-BIG_BUTTON .S-BUTTON-frame .I-BUTTON-arrow .PATH-2 {
     transform: translateX(-7.5vh);
     opacity: 0;
+  }
+  .S-FOOTER-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-column-gap: 0;
+    grid-row-gap: 3vh;
+    padding: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts {
+    grid-area: 1/1/2/2;
+    padding: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email {
+    grid-area: 1/1/2/2;
+    width: max-content;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.875vh;
+    text-decoration: none;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link:hover .I-EMAIL-icon {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link:hover .T-EMAIL-text {
+    color: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link .I-EMAIL-icon {
+    fill: #B6B6B6;
+    height: 2.5vh;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link .T-EMAIL-text {
+    color: #B6B6B6;
+    transition: color 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials {
+    grid-area: 1/2/2/3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2.2505626407vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link {
+    display: flex;
+    text-decoration: none;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-all {
+    fill: #B6B6B6;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-all:hover {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-telegram {
+    height: 2.5vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-vk {
+    height: 2.25vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-steam {
+    height: 3.1vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-discord {
+    height: 2.5vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation {
+    grid-area: 2/1/3/2;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass {
+    display: grid;
+    grid-template-columns: calc((100vw - 6vh - 3vh) / 2) repeat(2, calc(((100vw - 6vh - 3vh) / 2 - 3vh) / 2));
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 3vh;
+    grid-row-gap: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons {
+    padding: 3vh 0;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons:hover .L-NAVIGATION-button .I-BUTTON-icon {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons:hover .L-NAVIGATION-button .T-BUTTON-title {
+    color: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons .L-NAVIGATION-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1252813203vh;
+    text-decoration: none;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons .L-NAVIGATION-button .I-BUTTON-icon {
+    height: 12.6vh;
+    fill: #B6B6B6;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons .L-NAVIGATION-button .T-BUTTON-title {
+    color: #B6B6B6;
+    transition: color 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits {
+    grid-area: 1 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5011252813vh;
+    padding: 6.751687922vh 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .I-CREDITS-image {
+    height: 6.7vh;
+    fill: #B6B6B6;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .I-CREDITS-image:hover {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .T-CREDITS-text {
+    color: #B6B6B6;
+    text-align: center;
+    max-width: 70.7vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .T-CREDITS-text .L-CREDITS-link {
+    color: #B6B6B6;
+    transition: color 0.2s, text-underline-offset 0.15s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .T-CREDITS-text .L-CREDITS-link:hover {
+    color: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-web {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-design {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-3d {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-about {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts {
+    grid-area: 3/1/4/2;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: 1fr;
+    grid-column-gap: 3vh;
+    grid-row-gap: 0;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-all {
+    padding: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-quote {
+    grid-area: 1/1/2/2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-quote .T-QUOTE-text {
+    color: #B6B6B6;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-est {
+    grid-area: 1/2/2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-est .T-EST-text {
+    color: #B6B6B6;
   }
 }
 @media screen and (max-aspect-ratio: 1.6666666667) and (min-aspect-ratio: 1.0526315789) {
@@ -1270,15 +1472,11 @@ body {
     margin-right: 2.2505626407vh;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link {
-    text-decoration: underline;
-    text-underline-offset: 0.4vh;
-    text-decoration-thickness: 0.25vh;
     color: #ffffff;
     margin-right: 2.2505626407vh;
     transition: color 0.2s, text-underline-offset 0.15s;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-link:hover {
-    text-underline-offset: 0.7vh;
     color: #5842FF;
   }
   .S-FRONT-carcass .S-FRONT-content .S-CONTENT-wrapper .S-CONTENT-carcass .S-CONTENT-shortcuts .L-SHORTCUT-icon {
@@ -1321,7 +1519,7 @@ body {
     height: 100vh;
     border-top: 0.3vh solid #414141;
     border-bottom: 0.3vh solid #414141;
-    background: radial-gradient(circle at 50% 120%, black 0%, rgba(88, 66, 255, 0.5) 49.5%, #5842ff 66.5%, rgba(88, 66, 255, 0.5) 83.5%, black 100%) no-repeat;
+    background: radial-gradient(circle at 50% 110%, black 0%, rgba(88, 66, 255, 0.5) 47%, #5842ff 66.5%, rgba(88, 66, 255, 0.5) 86%, black 100%) no-repeat;
   }
   .S-CONCLUSION-carcass .S-CONCLUSION-action {
     grid-area: 1/1/2/2;
@@ -1332,7 +1530,7 @@ body {
   }
   .S-CONCLUSION-carcass .S-CONCLUSION-action .T-CONCLUSION-title {
     text-align: center;
-    margin-bottom: 1.1252813203vh;
+    margin-bottom: 1.875vh;
   }
   .S-CONCLUSION-carcass .S-CONCLUSION-artworks {
     grid-area: 2/1/3/2;
@@ -1495,7 +1693,7 @@ body {
     padding: 3vh 3vh 0 3vh;
   }
   .S-PROJECTS-carcass .S-TILEROW-carcass .S-TILE-all .S-ALL-carcass .S-ALL-info .S-INFO-text .L-INFO-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 1.1252813203vh;
     text-decoration: none;
@@ -1778,6 +1976,190 @@ body {
   .COMPONENT-BIG_BUTTON .S-BUTTON-frame .I-BUTTON-arrow .PATH-2 {
     transform: translateX(-7.5vh);
     opacity: 0;
+  }
+  .S-FOOTER-carcass {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, max-content);
+    grid-column-gap: 0;
+    grid-row-gap: 3vh;
+    padding: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts {
+    grid-area: 1/1/2/2;
+    padding: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email {
+    grid-area: 1/1/2/2;
+    width: max-content;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.875vh;
+    text-decoration: none;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link:hover .I-EMAIL-icon {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link:hover .T-EMAIL-text {
+    color: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link .I-EMAIL-icon {
+    fill: #B6B6B6;
+    height: 2.5vh;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-email .L-EMAIL-link .T-EMAIL-text {
+    color: #B6B6B6;
+    transition: color 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials {
+    grid-area: 1/2/2/3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2.2505626407vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link {
+    display: flex;
+    text-decoration: none;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-all {
+    fill: #B6B6B6;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-all:hover {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-telegram {
+    height: 2.5vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-vk {
+    height: 2.25vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-steam {
+    height: 3.1vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-contacts .S-CONTACTS-carcass .S-CONTACTS-socials .L-SOCIALS-link .I-SOCIALS-discord {
+    height: 2.5vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation {
+    grid-area: 2/1/3/2;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass {
+    display: grid;
+    grid-template-columns: repeat(2, calc((100vw - 6vh - 3vh) / 2));
+    grid-template-rows: repeat(3, max-content);
+    grid-column-gap: 3vh;
+    grid-row-gap: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons {
+    padding: 3vh 0;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons:hover .L-NAVIGATION-button .I-BUTTON-icon {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons:hover .L-NAVIGATION-button .T-BUTTON-title {
+    color: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons .L-NAVIGATION-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1252813203vh;
+    text-decoration: none;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons .L-NAVIGATION-button .I-BUTTON-icon {
+    height: 12.6vh;
+    fill: #B6B6B6;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-buttons .L-NAVIGATION-button .T-BUTTON-title {
+    color: #B6B6B6;
+    transition: color 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits {
+    grid-area: 3 / 1 / 4 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5011252813vh;
+    padding: 6.751687922vh 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .I-CREDITS-image {
+    height: 6.7vh;
+    fill: #B6B6B6;
+    transition: fill 0.2s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .I-CREDITS-image:hover {
+    fill: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .T-CREDITS-text {
+    color: #B6B6B6;
+    text-align: center;
+    max-width: 70.7vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .T-CREDITS-text .L-CREDITS-link {
+    color: #B6B6B6;
+    transition: color 0.2s, text-underline-offset 0.15s;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-credits .T-CREDITS-text .L-CREDITS-link:hover {
+    color: #ffffff;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-web {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-design {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-3d {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .S-FOOTER-carcass .S-FOOTER-navigation .S-NAVIGATION-carcass .S-NAVIGATION-about {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts {
+    grid-area: 3/1/4/2;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-template-rows: 1fr;
+    grid-column-gap: 3vh;
+    grid-row-gap: 0;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-all {
+    padding: 3vh;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-quote {
+    grid-area: 1/1/2/2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-quote .T-QUOTE-text {
+    color: #B6B6B6;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-est {
+    grid-area: 1/2/2/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .S-FOOTER-carcass .S-FOOTER-thoughts .S-THOUGHTS-carcass .S-THOUGHTS-est .T-EST-text {
+    color: #B6B6B6;
   }
 }
 @media screen and (min-aspect-ratio: 1.6666666667) and (hover: none) and (pointer: coarse) {

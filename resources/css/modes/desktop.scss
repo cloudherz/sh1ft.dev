@@ -433,10 +433,6 @@
                         }
 
                         .L-SHORTCUT-link {
-                            //  LINK SETTINGS
-                            text-decoration: underline;
-                            text-underline-offset: 0.4vh;
-                            text-decoration-thickness: 0.25vh;
                             //  FONT SETTINGS
                             color: $PALETTE-SNOW;
                             //  MARGINS & PADDINGS
@@ -447,8 +443,6 @@
                                 text-underline-offset 0.15s;
 
                             &:hover {
-                                //  LINK SETTINGS
-                                text-underline-offset: 0.7vh;
                                 //  FONT SETTINGS
                                 color: $PALETTE-SH1FT;
                             }
@@ -519,7 +513,7 @@
     //  LOCAL VARIABLES NAME = HOME-CONCLUSION
     $LV-D-HOME-CONCLUSION-IMAGE_HEIGHT: 52vh;
     $LV-D-HOME-CONCLUSION-BACKGROUND_HALO_RING_APEX: 66.5%;
-    $LV-D-HOME-CONCLUSION-BACKGROUND_HALO_RING_APEX_OFFSET: 17%;
+    $LV-D-HOME-CONCLUSION-BACKGROUND_HALO_RING_APEX_OFFSET: 19.5%;
     .S-CONCLUSION-carcass {
         //  CSS-GRID SETUP
         display: grid;
@@ -535,7 +529,7 @@
         //  BACKGROUND
         background:
             radial-gradient(
-                    circle at 50% 120%,
+                    circle at 50% 110%,
                     rgba($PALETTE-VOID, 1) 0%,
                     rgba($PALETTE-SH1FT, 0.5) $LV-D-HOME-CONCLUSION-BACKGROUND_HALO_RING_APEX - $LV-D-HOME-CONCLUSION-BACKGROUND_HALO_RING_APEX_OFFSET,
                     rgba($PALETTE-SH1FT, 1) $LV-D-HOME-CONCLUSION-BACKGROUND_HALO_RING_APEX,
@@ -556,7 +550,7 @@
                 //  FONT SETTINGS
                 text-align: center;
                 //  MARGINS & PADDINGS
-                margin-bottom: $GV-D-DISTANCE-MICRO;
+                margin-bottom: $GV-D-DISTANCE-SMALL;
             }
         }
         .S-CONCLUSION-artworks {
@@ -859,7 +853,7 @@
 
                             .L-INFO-link {
                                 //  FLEXBOX
-                                display: inline-flex;
+                                display: flex;
                                 align-items: center;
                                 gap: $GV-D-DISTANCE-MICRO;
                                 //  LINK SETTINGS
@@ -1328,6 +1322,301 @@
                     transform: translateX(-$LV-D-HOME-FRONT-PATH_TRANSLATE);
                     //  OPACITY
                     opacity: 0;
+                }
+            }
+        }
+    }
+
+
+
+    //  CHUNK:COMPONENT-FOOTER_SEGMENT
+    //  LOCAL VARIABLES NAME = COMPONENT-FOOTER_SEGMENT
+    $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-TEMPLATE_COLUMNS: map-get($MODE_VALUES, LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-TEMPLATE_COLUMNS);
+    $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-TEMPLATE_ROWS: map-get($MODE_VALUES, LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-TEMPLATE_ROWS);
+    $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_CREDITS: map-get($MODE_VALUES, LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_CREDITS);
+    $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_WEB: map-get($MODE_VALUES, LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_WEB);
+    $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_DESIGN: map-get($MODE_VALUES, LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_DESIGN);
+    $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_3D: map-get($MODE_VALUES, LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_3D);
+    $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_ABOUT: map-get($MODE_VALUES, LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_ABOUT);
+    .S-FOOTER-carcass {
+        //  CSS-GRID SETUP
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, max-content);
+        grid-column-gap: 0;
+        grid-row-gap: $GV-D-DISTANCE-MEDIUM;
+        //  MARGINS & PADDINGS
+        padding: $GV-D-DISTANCE-MEDIUM;
+
+        .S-FOOTER-contacts {
+            //  CSS-GRID CONFIGURATION
+            grid-area: 1 / 1 / 2 / 2;
+            //  MARGINS & PADDINGS
+            padding: $GV-D-DISTANCE-MEDIUM;
+
+            .S-CONTACTS-carcass {
+                //  CSS-GRID SETUP
+                display: grid;
+                grid-template-columns: max-content 1fr;
+                grid-template-rows: 1fr;
+                grid-column-gap: 0;
+                grid-row-gap: 0;
+
+                .S-CONTACTS-email {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: 1 / 1 / 2 / 2;
+                    //  SCALING
+                    width: max-content;
+
+                    .L-EMAIL-link {
+                        //  FLEXBOX
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: $GV-D-DISTANCE-SMALL;
+                        //  LINK SETTINGS
+                        text-decoration: none;
+
+                        &:hover {
+                            .I-EMAIL-icon {
+                                //  FILL
+                                fill: $PALETTE-SNOW;
+                            }
+
+                            .T-EMAIL-text {
+                                //  FONT SETTINGS
+                                color: $PALETTE-SNOW;
+                            }
+                        }
+
+                        .I-EMAIL-icon {
+                            //  FILL
+                            fill: $PALETTE-ASH;
+                            //  SCALING
+                            height: 2.5vh;
+                            //  TRANSITION
+                            transition: fill 0.2s;
+                        }
+
+                        .T-EMAIL-text {
+                            //  FONT SETTINGS
+                            color: $PALETTE-ASH;
+                            //  TRANSITION
+                            transition: color 0.2s;
+                        }
+                    }
+                }
+                .S-CONTACTS-socials {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: 1 / 2 / 2 / 3;
+                    //  FLEXBOX
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-end;
+                    gap: $GV-D-DISTANCE-REGULAR;
+
+                    .L-SOCIALS-link {
+                        //  FLEXBOX
+                        display: flex;
+                        //  LINK SETTINGS
+                        text-decoration: none;
+
+                        .I-SOCIALS-all {
+                            //  FILL
+                            fill: $PALETTE-ASH;
+                            //  TRANSITION
+                            transition: fill 0.2s;
+
+                            &:hover {
+                                //  FILL
+                                fill: $PALETTE-SNOW;
+                            }
+                        }
+                        .I-SOCIALS-telegram {
+                            //  SCALING
+                            height: 2.5vh;
+                        }
+                        .I-SOCIALS-vk {
+                            //  SCALING
+                            height: 2.25vh;
+                        }
+                        .I-SOCIALS-steam {
+                            //  SCALING
+                            height: 3.1vh;
+                        }
+                        .I-SOCIALS-discord {
+                            //  SCALING
+                            height: 2.5vh;
+                        }
+                    }
+                }
+            }
+        }
+        .S-FOOTER-navigation {
+            //  CSS-GRID CONFIGURATION
+            grid-area: 2 / 1 / 3 / 2;
+
+            .S-NAVIGATION-carcass {
+                //  CSS-GRID SETUP
+                display: grid;
+                grid-template-columns: $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-TEMPLATE_COLUMNS;
+                grid-template-rows: $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-TEMPLATE_ROWS;
+                grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+                grid-row-gap: $GV-D-DISTANCE-MEDIUM;
+
+                .S-NAVIGATION-buttons {
+                    //  MARGINS & PADDINGS
+                    padding: $GV-D-DISTANCE-MEDIUM 0;
+
+                    &:hover {
+                        .L-NAVIGATION-button {
+                            .I-BUTTON-icon {
+                                //  FILL
+                                fill: $PALETTE-SNOW;
+                            }
+
+                            .T-BUTTON-title {
+                                //  FONT SETTINGS
+                                color: $PALETTE-SNOW;
+                            }
+                        }
+                    }
+
+                    .L-NAVIGATION-button {
+                        //  FLEXBOX
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: $GV-D-DISTANCE-MICRO;
+                        //  LINK SETTINGS
+                        text-decoration: none;
+
+                        .I-BUTTON-icon {
+                            //  SCALING
+                            height: 12.6vh;
+                            //  FILL
+                            fill: $PALETTE-ASH;
+                            //  TRANSITION
+                            transition: fill 0.2s;
+                        }
+
+                        .T-BUTTON-title {
+                            //  FONT SETTINGS
+                            color: $PALETTE-ASH;
+                            //  TRANSITION
+                            transition: color 0.2s;
+                        }
+                    }
+                }
+                .S-NAVIGATION-credits {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_CREDITS;
+                    //  FLEXBOX
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: $GV-D-DISTANCE-REGULAR * 2;
+                    //  MARGINS & PADDINGS
+                    padding: $GV-D-DISTANCE-REGULAR * 3 $GV-D-DISTANCE-MEDIUM;
+
+                    .I-CREDITS-image {
+                        //  SCALING
+                        height: 6.7vh;
+                        //  FILL
+                        fill: $PALETTE-ASH;
+                        //  TRANSITION
+                        transition: fill 0.2s;
+
+                        &:hover {
+                            //  FILL
+                            fill: $PALETTE-SNOW;
+                        }
+                    }
+
+                    .T-CREDITS-text {
+                        //  FONT SETTINGS
+                        color: $PALETTE-ASH;
+                        text-align: center;
+                        //  SCALING
+                        max-width: 70.7vh;
+
+                        .L-CREDITS-link {
+                            //  FONT SETTINGS
+                            color: $PALETTE-ASH;
+                            //  TRANSITION
+                            transition:
+                                color 0.2s,
+                                text-underline-offset 0.15s;
+
+                            &:hover {
+                                //  FONT SETTINGS
+                                color: $PALETTE-SNOW;
+                            }
+                        }
+                    }
+                }
+                .S-NAVIGATION-web {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_WEB;
+                }
+                .S-NAVIGATION-design {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_DESIGN;
+                }
+                .S-NAVIGATION-3d {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_3D;
+                }
+                .S-NAVIGATION-about {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: $LV-D-COMPONENT-FOOTER_SEGMENT-NAVIGATION-AREA_ABOUT;
+                }
+            }
+        }
+        .S-FOOTER-thoughts {
+            //  CSS-GRID CONFIGURATION
+            grid-area: 3 / 1 / 4 / 2;
+
+            .S-THOUGHTS-carcass {
+                //  CSS-GRID SETUP
+                display: grid;
+                grid-template-columns: 1fr max-content;
+                grid-template-rows: 1fr;
+                grid-column-gap: $GV-D-DISTANCE-MEDIUM;
+                grid-row-gap: 0;
+
+                .S-THOUGHTS-all {
+                    //  MARGINS & PADDINGS
+                    padding: $GV-D-DISTANCE-MEDIUM;
+                }
+                .S-THOUGHTS-quote {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: 1 / 1 / 2 / 2;
+                    //  FLEXBOX
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    .T-QUOTE-text {
+                        //  FONT SETTINGS
+                        color: $PALETTE-ASH;
+                    }
+                }
+                .S-THOUGHTS-est {
+                    //  CSS-GRID CONFIGURATION
+                    grid-area: 1 / 2 / 2 / 3;
+                    //  FLEXBOX
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .T-EST-text {
+                        //  FONT SETTINGS
+                        color: $PALETTE-ASH;
+                    }
                 }
             }
         }
